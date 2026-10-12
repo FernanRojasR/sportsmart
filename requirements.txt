@@ -1,0 +1,25 @@
+# --- Núcleo (Presentación 1) ---
+pandas>=2.0
+numpy>=1.24
+openpyxl>=3.1
+
+# --- Notebooks ---
+jupyterlab>=4.0
+matplotlib>=3.7
+seaborn>=0.13
+
+# --- Modelado (se activan en entregas siguientes) ---
+scikit-learn>=1.3
+mlxtend>=0.23        # 03_association (Apriori / FP-Growth)
+statsmodels>=0.14    # 05_timeseries (SARIMA, descomposición)
+networkx>=3.1        # 06_graphs
+shap>=0.44           # src/explainability
+# xgboost>=2.0       # 08_classification (opcional)
+# prophet>=1.1       # 05_timeseries (opcional)
+
+# --- Backend (cuando se implemente) ---
+# fastapi>=0.110
+# uvicorn>=0.29
+
+# --- Calidad ---
+pytest>=8.0

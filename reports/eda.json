@@ -1,0 +1,392 @@
+{
+ "inventario": {
+  "atencion": {
+   "filas": 5707,
+   "columnas": 9
+  },
+  "campanias": {
+   "filas": 20,
+   "columnas": 6
+  },
+  "clientes": {
+   "filas": 15045,
+   "columnas": 7
+  },
+  "detalle_pedido": {
+   "filas": 103047,
+   "columnas": 7
+  },
+  "devoluciones": {
+   "filas": 6427,
+   "columnas": 7
+  },
+  "logistica": {
+   "filas": 63413,
+   "columnas": 9
+  },
+  "marketing": {
+   "filas": 96056,
+   "columnas": 4
+  },
+  "navegacion": {
+   "filas": 32808,
+   "columnas": 7
+  },
+  "opiniones": {
+   "filas": 22911,
+   "columnas": 6
+  },
+  "pagos": {
+   "filas": 63413,
+   "columnas": 6
+  },
+  "pedidos": {
+   "filas": 63413,
+   "columnas": 6
+  },
+  "productos": {
+   "filas": 321,
+   "columnas": 8
+  }
+ },
+ "total_registros": 472581,
+ "calidad": {
+  "atencion": {
+   "nulos": {},
+   "pct_celdas_nulas": 0.0,
+   "duplicados_exactos": 0,
+   "horas_negativas": 12
+  },
+  "campanias": {
+   "nulos": {},
+   "pct_celdas_nulas": 0.0,
+   "duplicados_exactos": 0
+  },
+  "clientes": {
+   "nulos": {
+    "edad": 901,
+    "genero": 452
+   },
+   "pct_celdas_nulas": 1.28,
+   "duplicados_exactos": 45,
+   "ids_duplicados": 45,
+   "edad_fuera_rango": 14,
+   "genero_valores_distintos": [
+    "F",
+    "F ",
+    "Femenino",
+    "M",
+    "f",
+    "m",
+    "masculino"
+   ],
+   "genero_no_estandar": 580,
+   "departamento_mal_escrito": 752,
+   "ejemplos_departamento": [
+    "Ancash",
+    "CALLAO",
+    "Cuzco",
+    "ICA",
+    "Junin",
+    "LA LIBERTAD",
+    "LAMBAYEQUE",
+    "LIMA"
+   ]
+  },
+  "detalle_pedido": {
+   "nulos": {
+    "talla": 48678
+   },
+   "pct_celdas_nulas": 6.75,
+   "duplicados_exactos": 120,
+   "cantidad_no_positiva": 20,
+   "cantidad_atipica_mayor_10": 20,
+   "cantidad_max": 99
+  },
+  "devoluciones": {
+   "nulos": {
+    "talla": 1140
+   },
+   "pct_celdas_nulas": 2.53,
+   "duplicados_exactos": 0
+  },
+  "logistica": {
+   "nulos": {
+    "dias_entrega": 3121,
+    "entrega_a_tiempo": 3121
+   },
+   "pct_celdas_nulas": 1.09,
+   "duplicados_exactos": 0,
+   "distancia_negativa": 30,
+   "dias_entrega_outliers_z3": 84
+  },
+  "marketing": {
+   "nulos": {},
+   "pct_celdas_nulas": 0.0,
+   "duplicados_exactos": 0
+  },
+  "navegacion": {
+   "nulos": {},
+   "pct_celdas_nulas": 0.0,
+   "duplicados_exactos": 0
+  },
+  "opiniones": {
+   "nulos": {
+    "comentario": 1145
+   },
+   "pct_celdas_nulas": 0.83,
+   "duplicados_exactos": 0,
+   "puntuacion_fuera_1_5": 15,
+   "comentario_vacio": 1145
+  },
+  "pagos": {
+   "nulos": {
+    "metodo": 634
+   },
+   "pct_celdas_nulas": 0.17,
+   "duplicados_exactos": 0,
+   "importe_no_cuadra": 80
+  },
+  "pedidos": {
+   "nulos": {
+    "campania_id": 52639,
+    "monto_total": 60
+   },
+   "pct_celdas_nulas": 13.85,
+   "duplicados_exactos": 0,
+   "fechas_futuras": 25
+  },
+  "productos": {
+   "nulos": {
+    "marca": 3,
+    "precio_lista": 5
+   },
+   "pct_celdas_nulas": 0.31,
+   "duplicados_exactos": 0,
+   "precio_nulo": 5
+  }
+ },
+ "eda": {
+  "periodo": [
+   "2023-01-01",
+   "2026-09-29"
+  ],
+  "pedidos_validos": 60151,
+  "clientes_con_compra": 7802,
+  "ventas_totales_soles": 13953655.0,
+  "ticket_promedio": 231.98,
+  "ticket_mediana": 162.8,
+  "ventas_mensuales": {
+   "2023-01": 289314.0,
+   "2023-02": 224001.0,
+   "2023-03": 288471.0,
+   "2023-04": 206420.0,
+   "2023-05": 230483.0,
+   "2023-06": 222599.0,
+   "2023-07": 269167.0,
+   "2023-08": 230484.0,
+   "2023-09": 233634.0,
+   "2023-10": 259455.0,
+   "2023-11": 340117.0,
+   "2023-12": 397400.0,
+   "2024-01": 316096.0,
+   "2024-02": 267536.0,
+   "2024-03": 295782.0,
+   "2024-04": 235936.0,
+   "2024-05": 257506.0,
+   "2024-06": 253184.0,
+   "2024-07": 303089.0,
+   "2024-08": 274340.0,
+   "2024-09": 260559.0,
+   "2024-10": 293796.0,
+   "2024-11": 411876.0,
+   "2024-12": 453426.0,
+   "2025-01": 348764.0,
+   "2025-02": 273440.0,
+   "2025-03": 334301.0,
+   "2025-04": 274965.0,
+   "2025-05": 311346.0,
+   "2025-06": 274990.0,
+   "2025-07": 372633.0,
+   "2025-08": 312704.0,
+   "2025-09": 296464.0,
+   "2025-10": 322597.0,
+   "2025-11": 436170.0,
+   "2025-12": 495501.0,
+   "2026-01": 395615.0,
+   "2026-02": 313198.0,
+   "2026-03": 387024.0,
+   "2026-04": 298479.0,
+   "2026-05": 336054.0,
+   "2026-06": 289309.0,
+   "2026-07": 403205.0,
+   "2026-08": 327114.0,
+   "2026-09": 335112.0
+  },
+  "ventas_anuales": {
+   "2023": 3191545.0,
+   "2024": 3623125.0,
+   "2025": 4053874.0,
+   "2026": 3085112.0
+  },
+  "indice_estacional_mes": {
+   "1": 1.11,
+   "2": 0.89,
+   "3": 1.04,
+   "4": 0.82,
+   "5": 0.91,
+   "6": 0.83,
+   "7": 1.04,
+   "8": 0.89,
+   "9": 0.85,
+   "10": 0.94,
+   "11": 1.26,
+   "12": 1.42
+  },
+  "ventas_categoria_pct": {
+   "Calzado": 39.5,
+   "Accesorios": 17.3,
+   "Ropa superior": 16.4,
+   "Ropa inferior": 15.0,
+   "Equipamiento": 11.8
+  },
+  "items_por_pedido": 1.62,
+  "pct_pedidos_multi_item": 43.2,
+  "pedidos_por_cliente": {
+   "media": 7.71,
+   "mediana": 4.0,
+   "p90": 18.0,
+   "pct_una_sola_compra": 24.8
+  },
+  "pct_clientes_sin_compra_180d": 71.0,
+  "pct_ventas_top20_clientes": 65.5,
+  "ventas_departamento_pct": {
+   "Lima": 47.4,
+   "Arequipa": 8.4,
+   "La Libertad": 7.6,
+   "Callao": 5.9,
+   "Piura": 5.3,
+   "Cusco": 5.2,
+   "Junín": 5.1,
+   "Lambayeque": 4.6
+  },
+  "edad": {
+   "media": 31.2,
+   "mediana": 31.0,
+   "p25": 25.0,
+   "p75": 37.0
+  },
+  "deporte_preferido_pct": {
+   "Running": 27.5,
+   "Training": 27.2,
+   "Fútbol": 20.6,
+   "Outdoor": 9.7,
+   "Yoga": 7.8,
+   "Ciclismo": 7.1
+  },
+  "metodo_pago_pct": {
+   "Tarjeta crédito": 32.0,
+   "Yape": 25.1,
+   "Tarjeta débito": 19.9,
+   "Plin": 8.2,
+   "PagoEfectivo": 8.0,
+   "Contraentrega": 6.9
+  },
+  "tasa_devolucion_categoria_pct": {
+   "Calzado": 13.0,
+   "Ropa inferior": 9.0,
+   "Ropa superior": 8.9,
+   "Equipamiento": 2.6,
+   "Accesorios": 2.4
+  },
+  "tasa_devolucion_global_pct": 6.6,
+  "motivo_devolucion_pct": {
+   "Talla incorrecta": 35.0,
+   "Producto defectuoso": 16.5,
+   "Cambio de opinión": 16.4,
+   "No coincide con la foto": 16.3,
+   "Llegó tarde": 15.7
+  },
+  "entrega": {
+   "Lima/Callao": {
+    "dias_prom": 2.2,
+    "pct_a_tiempo": 89.4
+   },
+   "Provincias": {
+    "dias_prom": 4.6,
+    "pct_a_tiempo": 89.3
+   }
+  },
+  "puntuacion_dist_pct": {
+   "1": 1.6,
+   "2": 7.0,
+   "3": 20.4,
+   "4": 38.1,
+   "5": 32.9
+  },
+  "puntuacion_media": 3.94,
+  "puntuacion_media_por_entrega": {
+   "a_tiempo": 4.08,
+   "con_retraso": 2.75
+  },
+  "atencion": {
+   "tickets": 5707,
+   "pct_reclamos": 38.5,
+   "horas_mediana": 13.5,
+   "tema_top": {
+    "Estado del pedido": 32.0,
+    "Cambio de talla": 25.3,
+    "Producto defectuoso": 13.900000000000002,
+    "Stock": 12.6,
+    "Facturación": 9.6,
+    "Cobro duplicado": 6.6000000000000005
+   }
+  },
+  "marketing": {
+   "tasa_apertura": 27.9,
+   "ctr": 9.7
+  },
+  "pct_pedidos_con_campania": 17.0,
+  "navegacion": {
+   "sesiones_mes_media": 3.16,
+   "pct_sesiones_con_carrito_abandonado": 30.1,
+   "dispositivo_pct": {
+    "App": 45.2,
+    "Web móvil": 39.9,
+    "Web desktop": 14.9
+   }
+  },
+  "top_pares": [
+   {
+    "par": "Medias + Zapatillas running",
+    "soporte_pct": 3.4,
+    "lift": 2.08
+   },
+   {
+    "par": "Tomatodo + Zapatillas running",
+    "soporte_pct": 3.39,
+    "lift": 2.61
+   },
+   {
+    "par": "Tomatodo + Zapatillas training",
+    "soporte_pct": 3.32,
+    "lift": 2.52
+   },
+   {
+    "par": "Short + Zapatillas running",
+    "soporte_pct": 3.12,
+    "lift": 2.37
+   },
+   {
+    "par": "Top deportivo + Zapatillas training",
+    "soporte_pct": 3.1,
+    "lift": 3.36
+   },
+   {
+    "par": "Polo dry-fit + Zapatillas running",
+    "soporte_pct": 3.01,
+    "lift": 2.84
+   }
+  ]
+ }
+}

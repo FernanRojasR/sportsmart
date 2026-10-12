@@ -1,0 +1,25 @@
+services:
+  # Ejecuta el pipeline de datos (generación + EDA + diccionario)
+  pipeline:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+      - ./docs:/app/docs
+    command: python -m src.pipeline
+
+  # Entorno de notebooks: http://localhost:8888
+  notebooks:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=''
+
+  # Se habilita cuando exista backend/api (FastAPI)
+  # api:
+  #   build: .
+  #   ports:
+  #     - "8000:8000"
+  #   command: uvicorn backend.api.main:app --host 0.0.0.0 --port 8000

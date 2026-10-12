@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos generados en pasos posteriores (data/raw SÍ se versiona: es pequeño y reproducible)
+data/processed/*
+!data/processed/.gitkeep
+data/external/*
+!data/external/.gitkeep
+
+# Modelos entrenados
+src/models/artifacts/
+*.pkl
+*.joblib
+
+# Office temporales
+~$*
+
+# Sistema / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env

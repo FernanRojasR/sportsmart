@@ -1,0 +1,322 @@
+producto_id,nombre,categoria,subcategoria,marca,precio_lista,costo,talla_aplica
+P0001,Zapatillas running Lite 1,Calzado,Zapatillas running,New Balance,308.9,161.2,True
+P0002,Zapatillas running Core 2,Calzado,Zapatillas running,Marca propia,431.9,205.5,True
+P0003,Zapatillas running Flex 3,Calzado,Zapatillas running,Under Armour,307.9,167.09,True
+P0004,Zapatillas running Air 4,Calzado,Zapatillas running,Puma,484.9,252.96,True
+P0005,Zapatillas running Pro 5,Calzado,Zapatillas running,Under Armour,277.9,162.77,True
+P0006,Zapatillas running Flex 6,Calzado,Zapatillas running,Under Armour,338.9,173.51,True
+P0007,Zapatillas running Air 7,Calzado,Zapatillas running,Marca propia,424.9,225.02,True
+P0008,Zapatillas running Pro 8,Calzado,Zapatillas running,Reebok,498.9,243.8,True
+P0009,Zapatillas running Flex 9,Calzado,Zapatillas running,Adidas,532.9,294.97,True
+P0010,Zapatillas running Max 10,Calzado,Zapatillas running,Under Armour,343.9,194.64,True
+P0011,Zapatillas running Max 11,Calzado,Zapatillas running,Nike,214.9,97.73,True
+P0012,Zapatillas running Elite 12,Calzado,Zapatillas running,New Balance,490.9,229.93,True
+P0013,Zapatillas running Max 13,Calzado,Zapatillas running,Reebok,523.9,295.47,True
+P0014,Zapatillas running Core 14,Calzado,Zapatillas running,Nike,408.9,224.26,True
+P0015,Zapatillas running Max 15,Calzado,Zapatillas running,Nike,340.9,202.39,True
+P0016,Zapatillas running Max 16,Calzado,Zapatillas running,New Balance,531.9,255.61,True
+P0017,Zapatillas training Pro 17,Calzado,Zapatillas training,Adidas,403.9,239.34,True
+P0018,Zapatillas training Flex 18,Calzado,Zapatillas training,Marca propia,234.9,126.36,True
+P0019,Zapatillas training Lite 19,Calzado,Zapatillas training,Under Armour,,113.31,True
+P0020,Zapatillas training Max 20,Calzado,Zapatillas training,Puma,333.9,191.74,True
+P0021,Zapatillas training Max 21,Calzado,Zapatillas training,Reebok,358.9,175.99,True
+P0022,Zapatillas training Core 22,Calzado,Zapatillas training,Adidas,217.9,126.1,True
+P0023,Zapatillas training Elite 23,Calzado,Zapatillas training,Nike,401.9,229.13,True
+P0024,Zapatillas training Elite 24,Calzado,Zapatillas training,Marca propia,241.9,109.88,True
+P0025,Zapatillas training Pro 25,Calzado,Zapatillas training,Marca propia,218.9,122.24,True
+P0026,Zapatillas training Pro 26,Calzado,Zapatillas training,Nike,410.9,213.91,True
+P0027,Zapatillas training Core 27,Calzado,Zapatillas training,Puma,408.9,243.64,True
+P0028,Zapatillas training Core 28,Calzado,Zapatillas training,Adidas,311.9,146.23,True
+P0029,Zapatillas training Elite 29,Calzado,Zapatillas training,Nike,223.9,129.64,True
+P0030,Zapatillas training Lite 30,Calzado,Zapatillas training,Nike,306.9,164.23,True
+P0031,Zapatillas training Max 31,Calzado,Zapatillas training,Marca propia,235.9,131.69,True
+P0032,Zapatillas training Core 32,Calzado,Zapatillas training,Puma,421.9,230.05,True
+P0033,Zapatillas training Lite 33,Calzado,Zapatillas training,Nike,255.9,150.18,True
+P0034,Zapatillas training Flex 34,Calzado,Zapatillas training,Under Armour,367.9,169.32,True
+P0035,Chimpunes Air 35,Calzado,Chimpunes,Marca propia,331.9,192.46,True
+P0036,Chimpunes Air 36,Calzado,Chimpunes,Adidas,243.9,135.44,True
+P0037,Chimpunes Pro 37,Calzado,Chimpunes,Adidas,159.9,80.8,True
+P0038,Chimpunes Max 38,Calzado,Chimpunes,Adidas,469.9,224.38,True
+P0039,Chimpunes Air 39,Calzado,Chimpunes,Under Armour,417.9,210.88,True
+P0040,Chimpunes Air 40,Calzado,Chimpunes,Reebok,,154.36,True
+P0041,Chimpunes Pro 41,Calzado,Chimpunes,Nike,167.9,92.9,True
+P0042,Chimpunes Elite 42,Calzado,Chimpunes,Reebok,410.9,229.62,True
+P0043,Chimpunes Pro 43,Calzado,Chimpunes,Nike,355.9,169.2,True
+P0044,Chimpunes Flex 44,Calzado,Chimpunes,Adidas,336.9,186.03,True
+P0045,Chimpunes Core 45,Calzado,Chimpunes,Nike,265.9,148.86,True
+P0046,Chimpunes Core 46,Calzado,Chimpunes,New Balance,375.9,192.06,True
+P0047,Chimpunes Pro 47,Calzado,Chimpunes,Nike,353.9,199.68,True
+P0048,Chimpunes Pro 48,Calzado,Chimpunes,Puma,283.9,160.71,True
+P0049,Chimpunes Lite 49,Calzado,Chimpunes,Reebok,348.9,177.76,True
+P0050,Chimpunes Elite 50,Calzado,Chimpunes,Adidas,375.9,196.15,True
+P0051,Chimpunes Lite 51,Calzado,Chimpunes,Under Armour,469.9,268.63,True
+P0052,Chimpunes Elite 52,Calzado,Chimpunes,Nike,351.9,188.14,True
+P0053,Chimpunes Elite 53,Calzado,Chimpunes,Under Armour,255.9,130.28,True
+P0054,Sandalias Elite 54,Calzado,Sandalias,Puma,70.9,36.64,True
+P0055,Sandalias Flex 55,Calzado,Sandalias,Marca propia,87.9,44.83,True
+P0056,Sandalias Elite 56,Calzado,Sandalias,New Balance,132.9,74.71,True
+P0057,Sandalias Max 57,Calzado,Sandalias,Marca propia,84.9,46.47,True
+P0058,Sandalias Pro 58,Calzado,Sandalias,Puma,131.9,70.23,True
+P0059,Sandalias Lite 59,Calzado,Sandalias,,129.9,77.4,True
+P0060,Sandalias Pro 60,Calzado,Sandalias,Marca propia,139.9,71.95,True
+P0061,Sandalias Pro 61,Calzado,Sandalias,New Balance,64.9,35.1,True
+P0062,Sandalias Elite 62,Calzado,Sandalias,New Balance,112.9,52.59,True
+P0063,Sandalias Elite 63,Calzado,Sandalias,New Balance,112.9,53.44,True
+P0064,Sandalias Lite 64,Calzado,Sandalias,Nike,128.9,67.3,True
+P0065,Sandalias Max 65,Calzado,Sandalias,Under Armour,145.9,71.42,True
+P0066,Sandalias Max 66,Calzado,Sandalias,Adidas,86.9,44.11,True
+P0067,Sandalias Elite 67,Calzado,Sandalias,Adidas,101.9,60.66,True
+P0068,Sandalias Pro 68,Calzado,Sandalias,Nike,118.9,61.08,True
+P0069,Sandalias Max 69,Calzado,Sandalias,Nike,137.9,82.02,True
+P0070,Sandalias Lite 70,Calzado,Sandalias,Reebok,106.9,51.2,True
+P0071,Sandalias Air 71,Calzado,Sandalias,Puma,116.9,69.9,True
+P0072,Sandalias Flex 72,Calzado,Sandalias,Nike,119.9,71.63,True
+P0073,Polo dry-fit Air 73,Ropa superior,Polo dry-fit,Nike,82.9,46.2,True
+P0074,Polo dry-fit Max 74,Ropa superior,Polo dry-fit,Puma,122.9,72.68,True
+P0075,Polo dry-fit Max 75,Ropa superior,Polo dry-fit,Marca propia,113.9,51.62,True
+P0076,Polo dry-fit Air 76,Ropa superior,Polo dry-fit,Nike,94.9,46.49,True
+P0077,Polo dry-fit Flex 77,Ropa superior,Polo dry-fit,Under Armour,84.9,48.28,True
+P0078,Polo dry-fit Lite 78,Ropa superior,Polo dry-fit,Adidas,96.9,52.46,True
+P0079,Polo dry-fit Air 79,Ropa superior,Polo dry-fit,Nike,48.9,26.11,True
+P0080,Polo dry-fit Pro 80,Ropa superior,Polo dry-fit,Adidas,51.9,26.13,True
+P0081,Polo dry-fit Lite 81,Ropa superior,Polo dry-fit,Nike,89.9,50.27,True
+P0082,Polo dry-fit Lite 82,Ropa superior,Polo dry-fit,Nike,89.9,45.81,True
+P0083,Polo dry-fit Elite 83,Ropa superior,Polo dry-fit,Marca propia,93.9,42.3,True
+P0084,Polo dry-fit Air 84,Ropa superior,Polo dry-fit,Adidas,113.9,67.39,True
+P0085,Polo dry-fit Elite 85,Ropa superior,Polo dry-fit,Marca propia,60.9,31.35,True
+P0086,Polo dry-fit Lite 86,Ropa superior,Polo dry-fit,New Balance,,45.37,True
+P0087,Casaca cortaviento Flex 87,Ropa superior,Casaca cortaviento,Nike,262.9,124.1,True
+P0088,Casaca cortaviento Max 88,Ropa superior,Casaca cortaviento,Puma,247.9,128.29,True
+P0089,Casaca cortaviento Air 89,Ropa superior,Casaca cortaviento,Nike,189.9,101.2,True
+P0090,Casaca cortaviento Max 90,Ropa superior,Casaca cortaviento,New Balance,314.9,188.11,True
+P0091,Casaca cortaviento Elite 91,Ropa superior,Casaca cortaviento,New Balance,224.9,114.54,True
+P0092,Casaca cortaviento Pro 92,Ropa superior,Casaca cortaviento,Nike,275.9,156.94,True
+P0093,Casaca cortaviento Elite 93,Ropa superior,Casaca cortaviento,Marca propia,206.9,106.27,True
+P0094,Casaca cortaviento Air 94,Ropa superior,Casaca cortaviento,Nike,170.9,96.51,True
+P0095,Casaca cortaviento Core 95,Ropa superior,Casaca cortaviento,Reebok,315.9,173.32,True
+P0096,Casaca cortaviento Core 96,Ropa superior,Casaca cortaviento,Marca propia,173.9,92.71,True
+P0097,Casaca cortaviento Flex 97,Ropa superior,Casaca cortaviento,New Balance,203.9,119.41,True
+P0098,Casaca cortaviento Core 98,Ropa superior,Casaca cortaviento,Marca propia,306.9,179.94,True
+P0099,Casaca cortaviento Max 99,Ropa superior,Casaca cortaviento,Nike,226.9,115.89,True
+P0100,Casaca cortaviento Air 100,Ropa superior,Casaca cortaviento,Puma,248.9,141.66,True
+P0101,Top deportivo Lite 101,Ropa superior,Top deportivo,Adidas,87.9,41.4,True
+P0102,Top deportivo Elite 102,Ropa superior,Top deportivo,Nike,85.9,46.73,True
+P0103,Top deportivo Pro 103,Ropa superior,Top deportivo,Adidas,90.9,47.95,True
+P0104,Top deportivo Core 104,Ropa superior,Top deportivo,Nike,103.9,61.34,True
+P0105,Top deportivo Max 105,Ropa superior,Top deportivo,Puma,71.9,42.49,True
+P0106,Top deportivo Flex 106,Ropa superior,Top deportivo,Marca propia,101.9,52.56,True
+P0107,Top deportivo Lite 107,Ropa superior,Top deportivo,Adidas,95.9,44.15,True
+P0108,Top deportivo Pro 108,Ropa superior,Top deportivo,New Balance,122.9,56.28,True
+P0109,Top deportivo Elite 109,Ropa superior,Top deportivo,Reebok,128.9,58.87,True
+P0110,Top deportivo Flex 110,Ropa superior,Top deportivo,Under Armour,132.9,64.15,True
+P0111,Top deportivo Air 111,Ropa superior,Top deportivo,Nike,99.9,48.97,True
+P0112,Top deportivo Flex 112,Ropa superior,Top deportivo,Adidas,81.9,47.81,True
+P0113,Top deportivo Core 113,Ropa superior,Top deportivo,Nike,101.9,45.88,True
+P0114,Top deportivo Lite 114,Ropa superior,Top deportivo,Puma,115.9,64.95,True
+P0115,Top deportivo Core 115,Ropa superior,Top deportivo,Reebok,104.9,55.94,True
+P0116,Top deportivo Flex 116,Ropa superior,Top deportivo,Adidas,80.9,46.79,True
+P0117,Top deportivo Pro 117,Ropa superior,Top deportivo,Puma,129.9,62.24,True
+P0118,Top deportivo Elite 118,Ropa superior,Top deportivo,Puma,97.9,50.29,True
+P0119,Polera Core 119,Ropa superior,Polera,Adidas,131.9,70.63,True
+P0120,Polera Pro 120,Ropa superior,Polera,Adidas,185.9,89.12,True
+P0121,Polera Elite 121,Ropa superior,Polera,Marca propia,176.9,88.9,True
+P0122,Polera Flex 122,Ropa superior,Polera,Under Armour,147.9,79.81,True
+P0123,Polera Core 123,Ropa superior,Polera,Under Armour,255.9,137.36,True
+P0124,Polera Elite 124,Ropa superior,Polera,Adidas,151.9,71.94,True
+P0125,Polera Elite 125,Ropa superior,Polera,Marca propia,256.9,147.55,True
+P0126,Polera Lite 126,Ropa superior,Polera,Nike,236.9,127.85,True
+P0127,Polera Pro 127,Ropa superior,Polera,New Balance,178.9,83.44,True
+P0128,Polera Max 128,Ropa superior,Polera,Reebok,197.9,113.86,True
+P0129,Polera Elite 129,Ropa superior,Polera,New Balance,139.9,72.84,True
+P0130,Polera Flex 130,Ropa superior,Polera,Nike,210.9,112.03,True
+P0131,Polera Elite 131,Ropa superior,Polera,Under Armour,129.9,63.91,True
+P0132,Polera Core 132,Ropa superior,Polera,Adidas,133.9,79.13,True
+P0133,Polera Elite 133,Ropa superior,Polera,Nike,248.9,114.82,True
+P0134,Polera Air 134,Ropa superior,Polera,Nike,170.9,90.77,True
+P0135,Polera Elite 135,Ropa superior,Polera,Puma,207.9,105.89,True
+P0136,Polera Core 136,Ropa superior,Polera,New Balance,120.9,62.56,True
+P0137,Short Pro 137,Ropa inferior,Short,Nike,111.9,56.03,True
+P0138,Short Air 138,Ropa inferior,Short,Marca propia,108.9,58.34,True
+P0139,Short Flex 139,Ropa inferior,Short,Adidas,80.9,42.92,True
+P0140,Short Pro 140,Ropa inferior,Short,Nike,66.9,36.63,True
+P0141,Short Pro 141,Ropa inferior,Short,Adidas,62.9,32.4,True
+P0142,Short Flex 142,Ropa inferior,Short,Reebok,74.9,41.3,True
+P0143,Short Core 143,Ropa inferior,Short,Under Armour,56.9,30.1,True
+P0144,Short Lite 144,Ropa inferior,Short,Marca propia,115.9,56.57,True
+P0145,Short Pro 145,Ropa inferior,Short,Adidas,71.9,43.0,True
+P0146,Short Flex 146,Ropa inferior,Short,Puma,117.9,58.5,True
+P0147,Short Core 147,Ropa inferior,Short,Marca propia,78.9,38.59,True
+P0148,Short Flex 148,Ropa inferior,Short,Under Armour,75.9,34.67,True
+P0149,Licra Max 149,Ropa inferior,Licra,Marca propia,118.9,70.05,True
+P0150,Licra Air 150,Ropa inferior,Licra,Marca propia,132.9,69.25,True
+P0151,Licra Flex 151,Ropa inferior,Licra,Reebok,158.9,80.65,True
+P0152,Licra Pro 152,Ropa inferior,Licra,Adidas,101.9,53.71,True
+P0153,Licra Max 153,Ropa inferior,Licra,Reebok,80.9,37.53,True
+P0154,Licra Pro 154,Ropa inferior,Licra,Puma,82.9,43.4,True
+P0155,Licra Max 155,Ropa inferior,Licra,Adidas,98.9,52.1,True
+P0156,Licra Flex 156,Ropa inferior,Licra,Marca propia,84.9,41.12,True
+P0157,Licra Flex 157,Ropa inferior,Licra,Adidas,152.9,72.43,True
+P0158,Licra Lite 158,Ropa inferior,Licra,New Balance,139.9,66.33,True
+P0159,Licra Air 159,Ropa inferior,Licra,Nike,151.9,88.23,True
+P0160,Licra Lite 160,Ropa inferior,Licra,New Balance,110.9,62.91,True
+P0161,Licra Lite 161,Ropa inferior,Licra,Adidas,154.9,75.94,True
+P0162,Licra Max 162,Ropa inferior,Licra,Marca propia,112.9,58.39,True
+P0163,Licra Core 163,Ropa inferior,Licra,New Balance,147.9,74.37,True
+P0164,Licra Lite 164,Ropa inferior,Licra,Under Armour,116.9,53.45,True
+P0165,Licra Elite 165,Ropa inferior,Licra,Nike,160.9,84.35,True
+P0166,Jogger Pro 166,Ropa inferior,Jogger,New Balance,132.9,77.04,True
+P0167,Jogger Elite 167,Ropa inferior,Jogger,Reebok,211.9,125.93,True
+P0168,Jogger Pro 168,Ropa inferior,Jogger,Marca propia,118.9,64.02,True
+P0169,Jogger Lite 169,Ropa inferior,Jogger,Reebok,218.9,111.92,True
+P0170,Jogger Elite 170,Ropa inferior,Jogger,Marca propia,141.9,75.46,True
+P0171,Jogger Lite 171,Ropa inferior,Jogger,Nike,129.9,60.49,True
+P0172,Jogger Air 172,Ropa inferior,Jogger,Puma,112.9,66.15,True
+P0173,Jogger Elite 173,Ropa inferior,Jogger,Nike,135.9,74.86,True
+P0174,Jogger Max 174,Ropa inferior,Jogger,Marca propia,168.9,87.65,True
+P0175,Jogger Air 175,Ropa inferior,Jogger,Under Armour,103.9,46.83,True
+P0176,Jogger Air 176,Ropa inferior,Jogger,Nike,169.9,94.06,True
+P0177,Jogger Air 177,Ropa inferior,Jogger,Adidas,159.9,85.7,True
+P0178,Jogger Core 178,Ropa inferior,Jogger,Nike,212.9,103.67,True
+P0179,Jogger Core 179,Ropa inferior,Jogger,New Balance,127.9,59.37,True
+P0180,Medias Air 180,Accesorios,Medias,Puma,41.9,20.32,False
+P0181,Medias Core 181,Accesorios,Medias,Marca propia,28.9,15.37,False
+P0182,Medias Core 182,Accesorios,Medias,Reebok,,21.66,False
+P0183,Medias Elite 183,Accesorios,Medias,Nike,46.9,22.29,False
+P0184,Medias Pro 184,Accesorios,Medias,Puma,40.9,21.49,False
+P0185,Medias Elite 185,Accesorios,Medias,Under Armour,30.9,14.3,False
+P0186,Medias Lite 186,Accesorios,Medias,Adidas,27.9,14.44,False
+P0187,Medias Elite 187,Accesorios,Medias,New Balance,30.9,17.59,False
+P0188,Medias Flex 188,Accesorios,Medias,Marca propia,29.9,16.02,False
+P0189,Medias Core 189,Accesorios,Medias,Marca propia,21.9,12.24,False
+P0190,Medias Air 190,Accesorios,Medias,Adidas,38.9,19.45,False
+P0191,Medias Core 191,Accesorios,Medias,Marca propia,36.9,22.01,False
+P0192,Medias Max 192,Accesorios,Medias,Adidas,23.9,13.62,False
+P0193,Medias Max 193,Accesorios,Medias,Nike,41.9,19.91,False
+P0194,Medias Elite 194,Accesorios,Medias,Marca propia,25.9,13.02,False
+P0195,Tomatodo Elite 195,Accesorios,Tomatodo,Reebok,45.9,26.62,False
+P0196,Tomatodo Core 196,Accesorios,Tomatodo,Under Armour,66.9,34.93,False
+P0197,Tomatodo Lite 197,Accesorios,Tomatodo,Nike,79.9,47.16,False
+P0198,Tomatodo Max 198,Accesorios,Tomatodo,Adidas,73.9,40.39,False
+P0199,Tomatodo Lite 199,Accesorios,Tomatodo,Marca propia,64.9,29.28,False
+P0200,Tomatodo Lite 200,Accesorios,Tomatodo,Reebok,71.9,37.14,False
+P0201,Tomatodo Air 201,Accesorios,Tomatodo,Puma,43.9,21.74,False
+P0202,Tomatodo Elite 202,Accesorios,Tomatodo,Nike,74.9,33.92,False
+P0203,Tomatodo Elite 203,Accesorios,Tomatodo,New Balance,75.9,44.1,False
+P0204,Tomatodo Air 204,Accesorios,Tomatodo,New Balance,48.9,25.54,False
+P0205,Tomatodo Max 205,Accesorios,Tomatodo,Nike,54.9,24.78,False
+P0206,Tomatodo Pro 206,Accesorios,Tomatodo,Adidas,80.9,45.1,False
+P0207,Gorra Lite 207,Accesorios,Gorra,Under Armour,95.9,46.04,False
+P0208,Gorra Flex 208,Accesorios,Gorra,Puma,39.9,19.08,False
+P0209,Gorra Pro 209,Accesorios,Gorra,Nike,73.9,41.29,False
+P0210,Gorra Flex 210,Accesorios,Gorra,Adidas,91.9,52.55,False
+P0211,Gorra Max 211,Accesorios,Gorra,Puma,86.9,46.77,False
+P0212,Gorra Max 212,Accesorios,Gorra,Nike,93.9,51.03,False
+P0213,Gorra Air 213,Accesorios,Gorra,Adidas,96.9,56.02,False
+P0214,Gorra Air 214,Accesorios,Gorra,Marca propia,57.9,33.87,False
+P0215,Gorra Flex 215,Accesorios,Gorra,Adidas,38.9,18.92,False
+P0216,Gorra Core 216,Accesorios,Gorra,Puma,54.9,26.89,False
+P0217,Gorra Flex 217,Accesorios,Gorra,New Balance,56.9,25.82,False
+P0218,Gorra Max 218,Accesorios,Gorra,Adidas,64.9,33.12,False
+P0219,Gorra Flex 219,Accesorios,Gorra,Marca propia,50.9,29.11,False
+P0220,Gorra Lite 220,Accesorios,Gorra,New Balance,72.9,34.75,False
+P0221,Gorra Max 221,Accesorios,Gorra,Puma,51.9,28.94,False
+P0222,Mochila Elite 222,Accesorios,Mochila,Marca propia,122.9,66.73,False
+P0223,Mochila Elite 223,Accesorios,Mochila,Marca propia,114.9,56.86,False
+P0224,Mochila Lite 224,Accesorios,Mochila,Marca propia,242.9,138.94,False
+P0225,Mochila Flex 225,Accesorios,Mochila,Puma,142.9,64.5,False
+P0226,Mochila Core 226,Accesorios,Mochila,Under Armour,200.9,112.31,False
+P0227,Mochila Air 227,Accesorios,Mochila,Nike,,63.72,False
+P0228,Mochila Pro 228,Accesorios,Mochila,Marca propia,181.9,107.66,False
+P0229,Mochila Lite 229,Accesorios,Mochila,Nike,253.9,121.14,False
+P0230,Mochila Flex 230,Accesorios,Mochila,Marca propia,109.9,49.73,False
+P0231,Mochila Lite 231,Accesorios,Mochila,Adidas,227.9,106.02,False
+P0232,Mochila Max 232,Accesorios,Mochila,Puma,242.9,119.68,False
+P0233,Mochila Air 233,Accesorios,Mochila,Marca propia,205.9,96.05,False
+P0234,Mochila Air 234,Accesorios,Mochila,Nike,102.9,55.13,False
+P0235,Mochila Pro 235,Accesorios,Mochila,Nike,154.9,87.02,False
+P0236,Mochila Air 236,Accesorios,Mochila,Under Armour,144.9,83.82,False
+P0237,Muñequera Pro 237,Accesorios,Muñequera,Puma,38.9,20.53,False
+P0238,Muñequera Max 238,Accesorios,Muñequera,New Balance,37.9,19.41,False
+P0239,Muñequera Lite 239,Accesorios,Muñequera,Reebok,17.9,10.5,False
+P0240,Muñequera Lite 240,Accesorios,Muñequera,Nike,33.9,19.8,False
+P0241,Muñequera Flex 241,Accesorios,Muñequera,Nike,19.9,10.21,False
+P0242,Muñequera Pro 242,Accesorios,Muñequera,Puma,30.9,15.91,False
+P0243,Muñequera Pro 243,Accesorios,Muñequera,Adidas,35.9,16.96,False
+P0244,Muñequera Air 244,Accesorios,Muñequera,Marca propia,37.9,17.5,False
+P0245,Muñequera Pro 245,Accesorios,Muñequera,New Balance,27.9,13.29,False
+P0246,Muñequera Air 246,Accesorios,Muñequera,Marca propia,23.9,12.67,False
+P0247,Muñequera Core 247,Accesorios,Muñequera,Puma,23.9,12.25,False
+P0248,Muñequera Flex 248,Accesorios,Muñequera,Reebok,31.9,14.62,False
+P0249,Muñequera Max 249,Accesorios,Muñequera,Nike,23.9,13.31,False
+P0250,Muñequera Air 250,Accesorios,Muñequera,Adidas,34.9,18.42,False
+P0251,Muñequera Air 251,Accesorios,Muñequera,Nike,26.9,13.83,False
+P0252,Muñequera Lite 252,Accesorios,Muñequera,Adidas,22.9,12.12,False
+P0253,Muñequera Flex 253,Accesorios,Muñequera,Adidas,36.9,18.5,False
+P0254,Muñequera Flex 254,Accesorios,Muñequera,Nike,18.9,11.25,False
+P0255,Muñequera Pro 255,Accesorios,Muñequera,Nike,31.9,14.52,False
+P0256,Pelota Core 256,Equipamiento,Pelota,Adidas,94.9,53.8,False
+P0257,Pelota Pro 257,Equipamiento,Pelota,Nike,168.9,91.53,False
+P0258,Pelota Lite 258,Equipamiento,Pelota,Puma,77.9,39.5,False
+P0259,Pelota Elite 259,Equipamiento,Pelota,Adidas,176.9,90.21,False
+P0260,Pelota Pro 260,Equipamiento,Pelota,Reebok,81.9,39.22,False
+P0261,Pelota Elite 261,Equipamiento,Pelota,Nike,146.9,83.91,False
+P0262,Pelota Flex 262,Equipamiento,Pelota,Under Armour,92.9,53.44,False
+P0263,Pelota Max 263,Equipamiento,Pelota,Adidas,128.9,75.92,False
+P0264,Pelota Air 264,Equipamiento,Pelota,Adidas,154.9,82.36,False
+P0265,Pelota Elite 265,Equipamiento,Pelota,Marca propia,64.9,35.21,False
+P0266,Pelota Max 266,Equipamiento,Pelota,,112.9,62.74,False
+P0267,Pelota Pro 267,Equipamiento,Pelota,New Balance,150.9,72.57,False
+P0268,Pelota Pro 268,Equipamiento,Pelota,Puma,107.9,62.24,False
+P0269,Pelota Elite 269,Equipamiento,Pelota,Marca propia,107.9,52.65,False
+P0270,Pelota Max 270,Equipamiento,Pelota,Nike,192.9,101.67,False
+P0271,Pelota Lite 271,Equipamiento,Pelota,Adidas,120.9,58.71,False
+P0272,Pelota Flex 272,Equipamiento,Pelota,Puma,174.9,89.85,False
+P0273,Mat de yoga Max 273,Equipamiento,Mat de yoga,Nike,92.9,42.67,False
+P0274,Mat de yoga Max 274,Equipamiento,Mat de yoga,Adidas,90.9,43.81,False
+P0275,Mat de yoga Air 275,Equipamiento,Mat de yoga,Nike,103.9,57.25,False
+P0276,Mat de yoga Core 276,Equipamiento,Mat de yoga,Puma,79.9,47.72,False
+P0277,Mat de yoga Max 277,Equipamiento,Mat de yoga,New Balance,161.9,85.49,False
+P0278,Mat de yoga Pro 278,Equipamiento,Mat de yoga,New Balance,105.9,61.99,False
+P0279,Mat de yoga Air 279,Equipamiento,Mat de yoga,Nike,161.9,79.69,False
+P0280,Mat de yoga Air 280,Equipamiento,Mat de yoga,Adidas,146.9,72.45,False
+P0281,Mat de yoga Flex 281,Equipamiento,Mat de yoga,Under Armour,160.9,89.85,False
+P0282,Mat de yoga Lite 282,Equipamiento,Mat de yoga,Nike,99.9,46.55,False
+P0283,Mat de yoga Flex 283,Equipamiento,Mat de yoga,Adidas,92.9,42.75,False
+P0284,Mat de yoga Pro 284,Equipamiento,Mat de yoga,Nike,137.9,82.53,False
+P0285,Mat de yoga Air 285,Equipamiento,Mat de yoga,Nike,133.9,68.45,False
+P0286,Mat de yoga Flex 286,Equipamiento,Mat de yoga,Adidas,116.9,69.22,False
+P0287,Mat de yoga Max 287,Equipamiento,Mat de yoga,Marca propia,72.9,34.56,False
+P0288,Mat de yoga Pro 288,Equipamiento,Mat de yoga,Marca propia,109.9,54.65,False
+P0289,Mat de yoga Pro 289,Equipamiento,Mat de yoga,Nike,162.9,83.1,False
+P0290,Mat de yoga Core 290,Equipamiento,Mat de yoga,,127.9,67.99,False
+P0291,Mancuernas Air 291,Equipamiento,Mancuernas,Puma,73.9,36.1,False
+P0292,Mancuernas Core 292,Equipamiento,Mancuernas,Nike,242.9,143.15,False
+P0293,Mancuernas Air 293,Equipamiento,Mancuernas,Puma,155.9,78.27,False
+P0294,Mancuernas Flex 294,Equipamiento,Mancuernas,Adidas,215.9,100.11,False
+P0295,Mancuernas Flex 295,Equipamiento,Mancuernas,Marca propia,99.9,58.21,False
+P0296,Mancuernas Max 296,Equipamiento,Mancuernas,Adidas,55.9,31.4,False
+P0297,Mancuernas Flex 297,Equipamiento,Mancuernas,Marca propia,90.9,43.72,False
+P0298,Mancuernas Max 298,Equipamiento,Mancuernas,New Balance,168.9,100.12,False
+P0299,Mancuernas Max 299,Equipamiento,Mancuernas,Under Armour,83.9,46.59,False
+P0300,Mancuernas Flex 300,Equipamiento,Mancuernas,Under Armour,206.9,122.42,False
+P0301,Mancuernas Core 301,Equipamiento,Mancuernas,Marca propia,217.9,127.28,False
+P0302,Mancuernas Elite 302,Equipamiento,Mancuernas,Nike,209.9,124.47,False
+P0303,Mancuernas Air 303,Equipamiento,Mancuernas,Marca propia,205.9,104.91,False
+P0304,Mancuernas Elite 304,Equipamiento,Mancuernas,Adidas,190.9,101.93,False
+P0305,Banda elástica Core 305,Equipamiento,Banda elástica,Adidas,47.9,23.8,False
+P0306,Banda elástica Elite 306,Equipamiento,Banda elástica,Marca propia,50.9,29.51,False
+P0307,Banda elástica Core 307,Equipamiento,Banda elástica,Nike,66.9,33.22,False
+P0308,Banda elástica Pro 308,Equipamiento,Banda elástica,Adidas,38.9,20.8,False
+P0309,Banda elástica Elite 309,Equipamiento,Banda elástica,New Balance,37.9,17.78,False
+P0310,Banda elástica Air 310,Equipamiento,Banda elástica,Nike,53.9,25.74,False
+P0311,Banda elástica Max 311,Equipamiento,Banda elástica,Nike,59.9,31.73,False
+P0312,Banda elástica Lite 312,Equipamiento,Banda elástica,Marca propia,76.9,37.62,False
+P0313,Banda elástica Core 313,Equipamiento,Banda elástica,Nike,63.9,36.65,False
+P0314,Banda elástica Air 314,Equipamiento,Banda elástica,Marca propia,70.9,33.3,False
+P0315,Banda elástica Max 315,Equipamiento,Banda elástica,Adidas,53.9,30.99,False
+P0316,Banda elástica Flex 316,Equipamiento,Banda elástica,Marca propia,67.9,38.83,False
+P0317,Banda elástica Pro 317,Equipamiento,Banda elástica,Marca propia,56.9,26.98,False
+P0318,Banda elástica Elite 318,Equipamiento,Banda elástica,Adidas,52.9,28.68,False
+P0319,Banda elástica Max 319,Equipamiento,Banda elástica,Under Armour,38.9,22.67,False
+P0320,Banda elástica Flex 320,Equipamiento,Banda elástica,Marca propia,53.9,27.96,False
+P0321,Banda elástica Lite 321,Equipamiento,Banda elástica,Puma,34.9,17.65,False

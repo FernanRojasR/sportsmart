@@ -117,8 +117,8 @@ docker compose up notebooks         # Jupyter en http://localhost:8888
 | Integrante | Rol |
 |---|---|
 | Max Fernando Rojas Rojas | |
-| | |
-| | |
+| Carrascal Castro Maria Priscila | |
+| Gil Sixi Alberto Luis | |
 
 ## 📌 Convenciones
 

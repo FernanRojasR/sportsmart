@@ -1,0 +1,179 @@
+{
+ "controles": {
+  "Q01": {
+   "antes": 25,
+   "despues": 0
+  },
+  "Q02": {
+   "antes": 752,
+   "despues": 0
+  },
+  "Q03": {
+   "antes": 580,
+   "despues": 0
+  },
+  "Q04": {
+   "antes": 45,
+   "despues": 0
+  },
+  "Q05": {
+   "antes": 120,
+   "despues": 0
+  },
+  "Q06": {
+   "antes": 60,
+   "despues": 0
+  },
+  "Q07": {
+   "antes": 20,
+   "despues": 0
+  },
+  "Q08": {
+   "antes": 20,
+   "despues": 0
+  },
+  "Q09": {
+   "antes": 80,
+   "despues": 0
+  },
+  "Q10": {
+   "antes": 901,
+   "despues": 0
+  },
+  "Q11": {
+   "antes": 14,
+   "despues": 0
+  },
+  "Q12": {
+   "antes": 20,
+   "despues": 0
+  },
+  "Q13": {
+   "antes": 15,
+   "despues": 0
+  },
+  "Q14": {
+   "antes": 49,
+   "despues": 1
+  },
+  "Q15": {
+   "antes": 20,
+   "despues": 1
+  },
+  "Q16": {
+   "antes": 30,
+   "despues": 0
+  },
+  "Q17": {
+   "antes": 5,
+   "despues": 0
+  },
+  "Q18": {
+   "antes": 1145,
+   "despues": 1145,
+   "nota": "Sin texto: se excluye solo de NLP y se mantiene la puntuación"
+  },
+  "Q19": {
+   "antes": 452,
+   "despues": 0
+  },
+  "Q20": {
+   "antes": 634,
+   "despues": 0
+  },
+  "Q21": {
+   "antes": 30,
+   "despues": 0
+  },
+  "Q22": {
+   "antes": 12,
+   "despues": 0
+  },
+  "Q23": {
+   "antes": 3,
+   "despues": 0
+  }
+ },
+ "incidencias_antes": 5032,
+ "incidencias_despues": 1147,
+ "coherencia": {
+  "monto_distinto_a_detalle": 0,
+  "importe_distinto_a_cantidad_por_precio": 0,
+  "envio_antes_de_pedido": 0,
+  "opinion_antes_de_pedido": 0,
+  "unidades_inventario_distintas_a_ventas": 0,
+  "balance_inventario_no_cuadra": 0,
+  "pedidos_fuera_de_periodo_validos": 0
+ },
+ "filas": {
+  "clientes": {
+   "antes": 15045,
+   "despues": 15000
+  },
+  "productos": {
+   "antes": 321,
+   "despues": 321
+  },
+  "pedidos": {
+   "antes": 63413,
+   "despues": 63413
+  },
+  "detalle_pedido": {
+   "antes": 103047,
+   "despues": 102927
+  },
+  "pagos": {
+   "antes": 63413,
+   "despues": 63413
+  },
+  "campanias": {
+   "antes": 20,
+   "despues": 20
+  },
+  "marketing": {
+   "antes": 96056,
+   "despues": 96056
+  },
+  "navegacion": {
+   "antes": 32808,
+   "despues": 32808
+  },
+  "atencion": {
+   "antes": 5707,
+   "despues": 5707
+  },
+  "opiniones": {
+   "antes": 22911,
+   "despues": 22911
+  },
+  "devoluciones": {
+   "antes": 6427,
+   "despues": 6427
+  },
+  "logistica": {
+   "antes": 63413,
+   "despues": 63413
+  },
+  "inventario": {
+   "antes": 14475,
+   "despues": 14445
+  }
+ },
+ "ventas_validas": {
+  "pedidos_antes": 60216,
+  "pedidos_despues": 60300,
+  "soles_antes": 13968141.92,
+  "soles_despues": 13988027.87,
+  "diferencia_soles": 19885.95
+ },
+ "vistas_integradas": {
+  "ventas_items": {
+   "filas": 102927,
+   "columnas": 26
+  },
+  "pedidos_integrados": {
+   "filas": 63413,
+   "columnas": 28
+  }
+ }
+}

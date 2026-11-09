@@ -100,15 +100,15 @@ Estos criterios evalúan a los modelos. El éxito para el negocio se mide con lo
 
 | Técnica | Métrica | Meta orientativa |
 |---|---|---|
-| Asociación | Lift de las reglas seleccionadas | > 1,5 con soporte ≥ 1 % |
-| Clustering | Silhouette | > 0,4 y segmentos interpretables |
-| Series de tiempo | MAPE sobre los últimos 6 meses, en horizontes de 7, 30, 60 y 90 días | < 15 % |
+| Asociación | Lift de las reglas seleccionadas, por subcategoría | > 1,5 con soporte ≥ 1 % |
+| Clustering | Silhouette, con 3 segmentos | > 0,4 y segmentos interpretables |
+| Series de tiempo | MAPE semanal sobre los últimos 6 meses; se reportan también el MAPE diario y el error acumulado a 7, 30, 60 y 90 días | < 15 % |
 | Grafos | Modularidad de las comunidades | > 0,3 |
-| Regresión | RMSE / R² | R² > 0,6 |
+| Regresión | RMSE / R² de ventas por producto y mes; el valor del cliente se reporta como análisis secundario | R² > 0,6 |
 | Clasificación (churn) | Recall de la clase "abandona", AUC | AUC > 0,75 |
 | NLP | F1 de sentimiento | > 0,75 |
 
-> Las metas son una propuesta inicial del equipo; se validan con el docente.
+> Las metas son una propuesta inicial del equipo; se validan con el docente. Antes del modelado se ajustó el nivel de medición de asociación, series y regresión tras pruebas de viabilidad: por producto casi no hay pares con soporte suficiente, las ventas diarias son muy variables y 73,5 % de los compradores no gasta en los 12 meses siguientes. Los valores de las metas no cambiaron, y los resultados que no las alcancen se reportarán tal cual.
 
 ## 5. Iteraciones realizadas
 

@@ -118,4 +118,4 @@ El EDA actual excluye los registros inválidos. Tras aplicar el tratamiento, las
 
 - **Errores conocidos:** al ser simulados, varias reconstrucciones son exactas; en datos reales habría que validarlas con el área responsable.
 - **Fechas reconstruidas:** Q01 recupera el día, pero no la hora.
-- **Validación final pendiente:** este informe comprueba que los tratamientos son viables; su aplicación se verificará en la semana 10.
+- **Aplicación del tratamiento:** los tratamientos están implementados en `src/features/preparacion.py`; el resultado de los controles antes y después está en `reports/preparacion.json` y en `notebooks/02_preparation/02_preparacion.ipynb`.

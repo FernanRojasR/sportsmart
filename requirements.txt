@@ -14,8 +14,9 @@ mlxtend>=0.23        # 03_association (Apriori / FP-Growth)
 statsmodels>=0.14    # 05_timeseries (SARIMA, descomposición)
 networkx>=3.1        # 06_graphs
 shap>=0.44           # src/explainability
-# xgboost>=2.0       # 08_classification (opcional)
-# prophet>=1.1       # 05_timeseries (opcional)
+xgboost>=2.0         # 07_regression y 08_classification
+prophet>=1.1         # 05_timeseries
+streamlit>=1.30      # primer prototipo
 
 # --- Backend (cuando se implemente) ---
 # fastapi>=0.110

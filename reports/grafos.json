@@ -1,0 +1,905 @@
+{
+ "heterogeneo": {
+  "clientes": 7812,
+  "productos": 321,
+  "aristas_compra": 84614,
+  "aristas_recomienda": 9522,
+  "resenas_un_producto": 12962,
+  "pct_recomienda": 73.5
+ },
+ "producto_producto": {
+  "umbral_pedidos": 5,
+  "nodos": 271,
+  "aristas": 3907,
+  "densidad": 0.1068,
+  "componentes": 1,
+  "coef_agrupamiento": 0.289,
+  "modularidad_sin_umbral": 0.302
+ },
+ "comunidades": {
+  "n": 3,
+  "modularidad": 0.356,
+  "meta": 0.3,
+  "cumple_meta": true,
+  "estabilidad": {
+   "modularidad_media": 0.355,
+   "modularidad_min": 0.352,
+   "ari_medio": 0.963
+  },
+  "referencia_azar": {
+   "modularidad_media": 0.169,
+   "modularidad_max": 0.178,
+   "repeticiones": 10
+  },
+  "perfil": [
+   {
+    "comunidad": 0,
+    "productos": 114,
+    "subcategorias_principales": [
+     "Chimpunes",
+     "Muñequera",
+     "Pelota",
+     "Zapatillas running",
+     "Medias"
+    ],
+    "categorias": {
+     "Calzado": 35,
+     "Accesorios": 35,
+     "Equipamiento": 18,
+     "Ropa superior": 14,
+     "Ropa inferior": 12
+    },
+    "ingresos_pct": 48.6,
+    "etiqueta": "Chimpunes · Muñequera · Pelota"
+   },
+   {
+    "comunidad": 1,
+    "productos": 99,
+    "subcategorias_principales": [
+     "Zapatillas training",
+     "Top deportivo",
+     "Banda elástica",
+     "Licra",
+     "Mat de yoga"
+    ],
+    "categorias": {
+     "Equipamiento": 35,
+     "Calzado": 18,
+     "Ropa superior": 18,
+     "Ropa inferior": 17,
+     "Accesorios": 11
+    },
+    "ingresos_pct": 32.5,
+    "etiqueta": "Zapatillas training · Top deportivo · Banda elástica"
+   },
+   {
+    "comunidad": 2,
+    "productos": 58,
+    "subcategorias_principales": [
+     "Mochila",
+     "Gorra",
+     "Jogger",
+     "Casaca cortaviento"
+    ],
+    "categorias": {
+     "Accesorios": 30,
+     "Ropa inferior": 14,
+     "Ropa superior": 14
+    },
+    "ingresos_pct": 13.1,
+    "etiqueta": "Mochila · Gorra · Jogger"
+   }
+  ]
+ },
+ "productos_centrales": [
+  {
+   "producto_id": "P0201",
+   "grado": 92,
+   "fuerza": 812,
+   "pagerank": 0.0111,
+   "intermediacion": 0.0543,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0197",
+   "grado": 95,
+   "fuerza": 783,
+   "pagerank": 0.0111,
+   "intermediacion": 0.0384,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0199",
+   "grado": 94,
+   "fuerza": 729,
+   "pagerank": 0.0103,
+   "intermediacion": 0.0404,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0195",
+   "grado": 90,
+   "fuerza": 738,
+   "pagerank": 0.0102,
+   "intermediacion": 0.0251,
+   "comunidad": 0,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0200",
+   "grado": 90,
+   "fuerza": 733,
+   "pagerank": 0.0101,
+   "intermediacion": 0.024,
+   "comunidad": 0,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0198",
+   "grado": 89,
+   "fuerza": 721,
+   "pagerank": 0.0101,
+   "intermediacion": 0.0546,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0202",
+   "grado": 89,
+   "fuerza": 719,
+   "pagerank": 0.0099,
+   "intermediacion": 0.0306,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0206",
+   "grado": 84,
+   "fuerza": 709,
+   "pagerank": 0.0098,
+   "intermediacion": 0.0457,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0205",
+   "grado": 88,
+   "fuerza": 698,
+   "pagerank": 0.0098,
+   "intermediacion": 0.0323,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  },
+  {
+   "producto_id": "P0203",
+   "grado": 84,
+   "fuerza": 687,
+   "pagerank": 0.0097,
+   "intermediacion": 0.0271,
+   "comunidad": 1,
+   "categoria": "Accesorios",
+   "subcategoria": "Tomatodo"
+  }
+ ],
+ "recomendaciones_top": [
+  {
+   "producto_id": "P0005",
+   "resenas": 15,
+   "recomendaciones": 14,
+   "pct": 93.3,
+   "categoria": "Calzado",
+   "subcategoria": "Zapatillas running"
+  },
+  {
+   "producto_id": "P0178",
+   "resenas": 14,
+   "recomendaciones": 13,
+   "pct": 92.9,
+   "categoria": "Ropa inferior",
+   "subcategoria": "Jogger"
+  },
+  {
+   "producto_id": "P0179",
+   "resenas": 13,
+   "recomendaciones": 12,
+   "pct": 92.3,
+   "categoria": "Ropa inferior",
+   "subcategoria": "Jogger"
+  },
+  {
+   "producto_id": "P0092",
+   "resenas": 12,
+   "recomendaciones": 11,
+   "pct": 91.7,
+   "categoria": "Ropa superior",
+   "subcategoria": "Casaca cortaviento"
+  },
+  {
+   "producto_id": "P0234",
+   "resenas": 22,
+   "recomendaciones": 20,
+   "pct": 90.9,
+   "categoria": "Accesorios",
+   "subcategoria": "Mochila"
+  },
+  {
+   "producto_id": "P0252",
+   "resenas": 21,
+   "recomendaciones": 19,
+   "pct": 90.5,
+   "categoria": "Accesorios",
+   "subcategoria": "Muñequera"
+  },
+  {
+   "producto_id": "P0130",
+   "resenas": 28,
+   "recomendaciones": 25,
+   "pct": 89.3,
+   "categoria": "Ropa superior",
+   "subcategoria": "Polera"
+  },
+  {
+   "producto_id": "P0210",
+   "resenas": 33,
+   "recomendaciones": 29,
+   "pct": 87.9,
+   "categoria": "Accesorios",
+   "subcategoria": "Gorra"
+  }
+ ],
+ "categorias": {
+  "lift": {
+   "Accesorios": {
+    "Accesorios": 2.11,
+    "Calzado": 1.13,
+    "Equipamiento": 0.65,
+    "Ropa inferior": 0.75,
+    "Ropa superior": 0.8
+   },
+   "Calzado": {
+    "Accesorios": 1.13,
+    "Calzado": 3.58,
+    "Equipamiento": 0.95,
+    "Ropa inferior": 1.03,
+    "Ropa superior": 0.78
+   },
+   "Equipamiento": {
+    "Accesorios": 0.65,
+    "Calzado": 0.95,
+    "Equipamiento": 4.78,
+    "Ropa inferior": 0.45,
+    "Ropa superior": 0.36
+   },
+   "Ropa inferior": {
+    "Accesorios": 0.75,
+    "Calzado": 1.03,
+    "Equipamiento": 0.45,
+    "Ropa inferior": 3.35,
+    "Ropa superior": 0.44
+   },
+   "Ropa superior": {
+    "Accesorios": 0.8,
+    "Calzado": 0.78,
+    "Equipamiento": 0.36,
+    "Ropa inferior": 0.44,
+    "Ropa superior": 3.58
+   }
+  }
+ },
+ "subcategorias": {
+  "comunidad": {
+   "Banda elástica": 1,
+   "Casaca cortaviento": 2,
+   "Chimpunes": 0,
+   "Gorra": 2,
+   "Jogger": 2,
+   "Licra": 1,
+   "Mancuernas": 0,
+   "Mat de yoga": 1,
+   "Medias": 0,
+   "Mochila": 2,
+   "Muñequera": 0,
+   "Pelota": 0,
+   "Polo dry-fit": 0,
+   "Short": 0,
+   "Tomatodo": 1,
+   "Top deportivo": 1,
+   "Zapatillas running": 0,
+   "Zapatillas training": 1
+  },
+  "top_pares_lift": [
+   {
+    "a": "Casaca cortaviento",
+    "b": "Jogger",
+    "lift": 12.7
+   },
+   {
+    "a": "Casaca cortaviento",
+    "b": "Mochila",
+    "lift": 7.23
+   },
+   {
+    "a": "Banda elástica",
+    "b": "Mat de yoga",
+    "lift": 6.16
+   },
+   {
+    "a": "Banda elástica",
+    "b": "Zapatillas training",
+    "lift": 5.92
+   },
+   {
+    "a": "Chimpunes",
+    "b": "Pelota",
+    "lift": 4.08
+   },
+   {
+    "a": "Jogger",
+    "b": "Mochila",
+    "lift": 3.97
+   },
+   {
+    "a": "Mat de yoga",
+    "b": "Top deportivo",
+    "lift": 3.38
+   },
+   {
+    "a": "Top deportivo",
+    "b": "Zapatillas training",
+    "lift": 3.36
+   },
+   {
+    "a": "Casaca cortaviento",
+    "b": "Gorra",
+    "lift": 3.35
+   },
+   {
+    "a": "Polo dry-fit",
+    "b": "Zapatillas running",
+    "lift": 2.84
+   }
+  ],
+  "lift": {
+   "Banda elástica": {
+    "Banda elástica": 18.79,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.58,
+    "Jogger": 0.0,
+    "Licra": 1.77,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 6.16,
+    "Medias": 0.32,
+    "Mochila": 0.0,
+    "Muñequera": 0.79,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 1.59,
+    "Top deportivo": 2.68,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 5.92
+   },
+   "Casaca cortaviento": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 24.02,
+    "Chimpunes": 0.0,
+    "Gorra": 3.35,
+    "Jogger": 12.7,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.34,
+    "Mochila": 7.23,
+    "Muñequera": 0.7,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 0.47,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Chimpunes": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 12.64,
+    "Gorra": 0.57,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 2.06,
+    "Mochila": 0.0,
+    "Muñequera": 0.79,
+    "Pelota": 4.08,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 2.26,
+    "Tomatodo": 0.42,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Gorra": {
+    "Banda elástica": 0.58,
+    "Casaca cortaviento": 3.35,
+    "Chimpunes": 0.57,
+    "Gorra": 9.45,
+    "Jogger": 2.32,
+    "Licra": 0.58,
+    "Mancuernas": 0.61,
+    "Mat de yoga": 0.51,
+    "Medias": 0.59,
+    "Mochila": 1.47,
+    "Muñequera": 0.5,
+    "Pelota": 0.59,
+    "Polera": 0.54,
+    "Polo dry-fit": 0.61,
+    "Sandalias": 0.65,
+    "Short": 0.56,
+    "Tomatodo": 0.59,
+    "Top deportivo": 0.6,
+    "Zapatillas running": 0.65,
+    "Zapatillas training": 0.59
+   },
+   "Jogger": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 12.7,
+    "Chimpunes": 0.0,
+    "Gorra": 2.32,
+    "Jogger": 38.88,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.34,
+    "Mochila": 3.97,
+    "Muñequera": 0.75,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 0.42,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Licra": {
+    "Banda elástica": 1.77,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.58,
+    "Jogger": 0.0,
+    "Licra": 7.6,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 2.31,
+    "Medias": 0.38,
+    "Mochila": 0.0,
+    "Muñequera": 0.71,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 0.93,
+    "Top deportivo": 1.03,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 2.39
+   },
+   "Mancuernas": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.61,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 18.66,
+    "Mat de yoga": 0.0,
+    "Medias": 0.33,
+    "Mochila": 0.0,
+    "Muñequera": 0.8,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 0.46,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Mat de yoga": {
+    "Banda elástica": 6.16,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.51,
+    "Jogger": 0.0,
+    "Licra": 2.31,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 29.16,
+    "Medias": 0.35,
+    "Mochila": 0.0,
+    "Muñequera": 0.81,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 0.47,
+    "Top deportivo": 3.38,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Medias": {
+    "Banda elástica": 0.32,
+    "Casaca cortaviento": 0.34,
+    "Chimpunes": 2.06,
+    "Gorra": 0.59,
+    "Jogger": 0.34,
+    "Licra": 0.38,
+    "Mancuernas": 0.33,
+    "Mat de yoga": 0.35,
+    "Medias": 5.7,
+    "Mochila": 0.34,
+    "Muñequera": 0.63,
+    "Pelota": 0.89,
+    "Polera": 0.41,
+    "Polo dry-fit": 0.83,
+    "Sandalias": 0.42,
+    "Short": 1.04,
+    "Tomatodo": 0.84,
+    "Top deportivo": 0.35,
+    "Zapatillas running": 2.09,
+    "Zapatillas training": 0.33
+   },
+   "Mochila": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 7.23,
+    "Chimpunes": 0.0,
+    "Gorra": 1.47,
+    "Jogger": 3.97,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.34,
+    "Mochila": 23.05,
+    "Muñequera": 0.73,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 0.47,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Muñequera": {
+    "Banda elástica": 0.79,
+    "Casaca cortaviento": 0.7,
+    "Chimpunes": 0.79,
+    "Gorra": 0.5,
+    "Jogger": 0.75,
+    "Licra": 0.71,
+    "Mancuernas": 0.8,
+    "Mat de yoga": 0.81,
+    "Medias": 0.63,
+    "Mochila": 0.73,
+    "Muñequera": 12.21,
+    "Pelota": 0.73,
+    "Polera": 0.83,
+    "Polo dry-fit": 0.78,
+    "Sandalias": 0.8,
+    "Short": 0.78,
+    "Tomatodo": 0.55,
+    "Top deportivo": 0.77,
+    "Zapatillas running": 0.81,
+    "Zapatillas training": 0.75
+   },
+   "Pelota": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 4.08,
+    "Gorra": 0.59,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.89,
+    "Mochila": 0.0,
+    "Muñequera": 0.73,
+    "Pelota": 12.6,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.74,
+    "Tomatodo": 0.4,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Polera": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.54,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.41,
+    "Mochila": 0.0,
+    "Muñequera": 0.83,
+    "Pelota": 0.0,
+    "Polera": 38.02,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 0.4,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Polo dry-fit": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.61,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.83,
+    "Mochila": 0.0,
+    "Muñequera": 0.78,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 8.79,
+    "Sandalias": 0.0,
+    "Short": 0.64,
+    "Tomatodo": 1.02,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 2.84,
+    "Zapatillas training": 0.0
+   },
+   "Sandalias": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.65,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.42,
+    "Mochila": 0.0,
+    "Muñequera": 0.8,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 78.52,
+    "Short": 0.0,
+    "Tomatodo": 0.53,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 0.0
+   },
+   "Short": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 2.26,
+    "Gorra": 0.56,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 1.04,
+    "Mochila": 0.0,
+    "Muñequera": 0.78,
+    "Pelota": 0.74,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.64,
+    "Sandalias": 0.0,
+    "Short": 7.08,
+    "Tomatodo": 0.92,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 2.37,
+    "Zapatillas training": 0.0
+   },
+   "Tomatodo": {
+    "Banda elástica": 1.59,
+    "Casaca cortaviento": 0.47,
+    "Chimpunes": 0.42,
+    "Gorra": 0.59,
+    "Jogger": 0.42,
+    "Licra": 0.93,
+    "Mancuernas": 0.46,
+    "Mat de yoga": 0.47,
+    "Medias": 0.84,
+    "Mochila": 0.47,
+    "Muñequera": 0.55,
+    "Pelota": 0.4,
+    "Polera": 0.4,
+    "Polo dry-fit": 1.02,
+    "Sandalias": 0.53,
+    "Short": 0.92,
+    "Tomatodo": 7.18,
+    "Top deportivo": 1.08,
+    "Zapatillas running": 2.61,
+    "Zapatillas training": 2.52
+   },
+   "Top deportivo": {
+    "Banda elástica": 2.68,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.6,
+    "Jogger": 0.0,
+    "Licra": 1.03,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 3.38,
+    "Medias": 0.35,
+    "Mochila": 0.0,
+    "Muñequera": 0.77,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 1.08,
+    "Top deportivo": 10.23,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 3.36
+   },
+   "Zapatillas running": {
+    "Banda elástica": 0.0,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.65,
+    "Jogger": 0.0,
+    "Licra": 0.0,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 2.09,
+    "Mochila": 0.0,
+    "Muñequera": 0.81,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 2.84,
+    "Sandalias": 0.0,
+    "Short": 2.37,
+    "Tomatodo": 2.61,
+    "Top deportivo": 0.0,
+    "Zapatillas running": 10.73,
+    "Zapatillas training": 0.0
+   },
+   "Zapatillas training": {
+    "Banda elástica": 5.92,
+    "Casaca cortaviento": 0.0,
+    "Chimpunes": 0.0,
+    "Gorra": 0.59,
+    "Jogger": 0.0,
+    "Licra": 2.39,
+    "Mancuernas": 0.0,
+    "Mat de yoga": 0.0,
+    "Medias": 0.33,
+    "Mochila": 0.0,
+    "Muñequera": 0.75,
+    "Pelota": 0.0,
+    "Polera": 0.0,
+    "Polo dry-fit": 0.0,
+    "Sandalias": 0.0,
+    "Short": 0.0,
+    "Tomatodo": 2.52,
+    "Top deportivo": 3.36,
+    "Zapatillas running": 0.0,
+    "Zapatillas training": 10.59
+   }
+  }
+ },
+ "patrones_frecuentes": [
+  {
+   "patron": "Medias + Tomatodo + Zapatillas running",
+   "pedidos": 722,
+   "soporte_pct": 1.197,
+   "veces_sobre_azar": 5.3
+  },
+  {
+   "patron": "Short + Tomatodo + Zapatillas running",
+   "pedidos": 703,
+   "soporte_pct": 1.166,
+   "veces_sobre_azar": 6.4
+  },
+  {
+   "patron": "Medias + Short + Zapatillas running",
+   "pedidos": 690,
+   "soporte_pct": 1.144,
+   "veces_sobre_azar": 5.0
+  },
+  {
+   "patron": "Medias + Polo dry-fit + Zapatillas running",
+   "pedidos": 675,
+   "soporte_pct": 1.119,
+   "veces_sobre_azar": 6.0
+  },
+  {
+   "patron": "Tomatodo + Top deportivo + Zapatillas training",
+   "pedidos": 649,
+   "soporte_pct": 1.076,
+   "veces_sobre_azar": 8.4
+  },
+  {
+   "patron": "Polo dry-fit + Tomatodo + Zapatillas running",
+   "pedidos": 646,
+   "soporte_pct": 1.071,
+   "veces_sobre_azar": 7.2
+  },
+  {
+   "patron": "Banda elástica + Tomatodo + Zapatillas training",
+   "pedidos": 624,
+   "soporte_pct": 1.035,
+   "veces_sobre_azar": 14.8
+  },
+  {
+   "patron": "Licra + Tomatodo + Zapatillas training",
+   "pedidos": 621,
+   "soporte_pct": 1.03,
+   "veces_sobre_azar": 5.9
+  }
+ ],
+ "clientes_relacionados": {
+  "clientes_con_3_o_mas_items": 5648,
+  "pct_concentrado_60": 85.8,
+  "pct_por_comunidad": {
+   "0": 55.5,
+   "1": 35.1,
+   "2": 9.4
+  },
+  "deporte_por_comunidad": {
+   "0": {
+    "Ciclismo": 0.084,
+    "Fútbol": 0.356,
+    "Outdoor": 0.012,
+    "Running": 0.495,
+    "Training": 0.037,
+    "Yoga": 0.016
+   },
+   "1": {
+    "Ciclismo": 0.049,
+    "Fútbol": 0.014,
+    "Outdoor": 0.011,
+    "Running": 0.017,
+    "Training": 0.708,
+    "Yoga": 0.201
+   },
+   "2": {
+    "Ciclismo": 0.026,
+    "Fútbol": 0.03,
+    "Outdoor": 0.885,
+    "Running": 0.021,
+    "Training": 0.026,
+    "Yoga": 0.011
+   }
+  },
+  "vecino_comparte_deporte_pct": 88.0,
+  "azar_comparte_deporte_pct": 21.6,
+  "similitud_coseno_media_vecino": 0.955
+ }
+}

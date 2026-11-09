@@ -23,17 +23,23 @@ def test_clave_presente(tabla, clave):
     assert clave in cols
 
 
-def test_integridad_pedidos_clientes():
-    pedidos = pd.read_csv(RAW / "pedidos.csv", usecols=["cliente_id"])
-    clientes = pd.read_csv(RAW / "clientes.csv", usecols=["cliente_id"])
-    huerfanos = ~pedidos.cliente_id.isin(clientes.cliente_id)
-    assert huerfanos.mean() < 0.01
+RELACIONES = [
+    ("pedidos", "cliente_id", "clientes"), ("pedidos", "campania_id", "campanias"),
+    ("detalle_pedido", "pedido_id", "pedidos"), ("detalle_pedido", "producto_id", "productos"),
+    ("pagos", "pedido_id", "pedidos"), ("logistica", "pedido_id", "pedidos"),
+    ("opiniones", "pedido_id", "pedidos"), ("opiniones", "cliente_id", "clientes"),
+    ("atencion", "cliente_id", "clientes"), ("atencion", "pedido_id", "pedidos"),
+    ("devoluciones", "pedido_id", "pedidos"), ("devoluciones", "producto_id", "productos"),
+    ("marketing", "cliente_id", "clientes"), ("marketing", "campania_id", "campanias"),
+    ("navegacion", "cliente_id", "clientes"), ("inventario", "producto_id", "productos"),
+]
 
 
-def test_integridad_inventario_productos():
-    inventario = pd.read_csv(RAW / "inventario.csv", usecols=["producto_id"])
-    productos = pd.read_csv(RAW / "productos.csv", usecols=["producto_id"])
-    assert inventario.producto_id.isin(productos.producto_id).all()
+@pytest.mark.parametrize("hija,columna,padre", RELACIONES)
+def test_integridad_referencial(hija, columna, padre):
+    claves_hija = pd.read_csv(RAW / f"{hija}.csv", usecols=[columna])[columna].dropna()
+    claves_padre = pd.read_csv(RAW / f"{padre}.csv", usecols=[columna])[columna]
+    assert claves_hija.isin(claves_padre).all()
 
 
 def test_inventario_una_fila_por_producto_y_mes():

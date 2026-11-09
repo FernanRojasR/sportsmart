@@ -1,6 +1,7 @@
 # Datos
 
 - `diccionario_datos.xlsx`: diccionario y perfil de las 13 tablas (92 campos), con la hoja `Equivalencia PDF` campo a campo. Se regenera con `python src/data/diccionario.py`.
+- `informe_calidad.md`: problemas detectados, impacto y tratamiento propuesto.
 - Datos crudos: `data/raw/*.csv` (dataset sintético, semilla 42).
 
 ## Tablas

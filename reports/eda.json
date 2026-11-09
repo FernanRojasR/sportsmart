@@ -730,5 +730,192 @@
   "horas_resolucion_mediana": 13.4,
   "puntuacion_media": 3.93,
   "opiniones_negativas_pct": 8.7
+ },
+ "calidad_diagnostico": {
+  "integridad_referencial": {
+   "pedidos.cliente_id->clientes": 0,
+   "pedidos.campania_id->campanias": 0,
+   "detalle_pedido.pedido_id->pedidos": 0,
+   "detalle_pedido.producto_id->productos": 0,
+   "pagos.pedido_id->pedidos": 0,
+   "logistica.pedido_id->pedidos": 0,
+   "opiniones.pedido_id->pedidos": 0,
+   "opiniones.cliente_id->clientes": 0,
+   "atencion.cliente_id->clientes": 0,
+   "atencion.pedido_id->pedidos": 0,
+   "devoluciones.pedido_id->pedidos": 0,
+   "devoluciones.producto_id->productos": 0,
+   "marketing.cliente_id->clientes": 0,
+   "marketing.campania_id->campanias": 0,
+   "navegacion.cliente_id->clientes": 0,
+   "inventario.producto_id->productos": 0
+  },
+  "coherencia": {
+   "pedido_antes_de_registro": 0,
+   "clic_sin_apertura": 0,
+   "envio_antes_de_pedido": 25,
+   "envio_antes_de_pedido_por_fecha_futura": 25,
+   "opinion_antes_de_pedido": 10,
+   "opinion_antes_de_pedido_por_fecha_futura": 10,
+   "monto_total_no_cuadra_con_detalle": 0,
+   "pagos_por_pedido_max": 1,
+   "dias_entrega_mayor_40": 20
+  },
+  "atipicos_valores_validos": {
+   "pedidos.monto_total": {
+    "iqr": 1138,
+    "z3": 406,
+    "pct_iqr": 1.89,
+    "max": 1028.3
+   },
+   "productos.precio_lista": {
+    "iqr": 18,
+    "z3": 6,
+    "pct_iqr": 5.7,
+    "max": 532.9
+   },
+   "logistica.dias_entrega": {
+    "iqr": 1339,
+    "z3": 487,
+    "pct_iqr": 2.22,
+    "max": 13.0
+   },
+   "logistica.distancia_km": {
+    "iqr": 606,
+    "z3": 681,
+    "pct_iqr": 0.96,
+    "max": 2403.3
+   },
+   "atencion.horas_resolucion": {
+    "iqr": 401,
+    "z3": 89,
+    "pct_iqr": 7.04,
+    "max": 451.4
+   },
+   "navegacion.sesiones": {
+    "iqr": 1696,
+    "z3": 647,
+    "pct_iqr": 5.17,
+    "max": 35.0
+   }
+  },
+  "recuperacion": {
+   "fechas_futuras": {
+    "casos": 25,
+    "recuperables": 25
+   },
+   "monto_total_nulo": {
+    "casos": 60,
+    "recuperables": 60,
+    "soles": 14136.77
+   },
+   "departamento": {
+    "casos": 752,
+    "recuperables": 752
+   },
+   "genero": {
+    "casos": 580,
+    "recuperables": 580
+   },
+   "precio_nulo": {
+    "casos": 5,
+    "recuperables": 5
+   },
+   "cantidad_anomala": {
+    "casos": 40,
+    "recuperables": 40
+   },
+   "importe_pago": {
+    "casos": 80,
+    "recuperables": 80,
+    "exceso_soles": 10855.81
+   },
+   "detalle_duplicado": {
+    "casos": 120,
+    "importe_soles": 13497.34
+   },
+   "inventario_recibidas": {
+    "casos": 49,
+    "recuperables": 48
+   },
+   "inventario_stock_negativo": {
+    "casos": 20,
+    "recuperables": 19
+   }
+  },
+  "impacto_ventas_soles": {
+   "excluidas_por_monto_nulo": 14136.77,
+   "excluidas_por_fecha_futura": 5749.18,
+   "pct_de_ventas": 0.14
+  },
+  "incidencias_por_tabla": {
+   "clientes": {
+    "incidencias": 2744,
+    "filas": 15045,
+    "pct": 18.24
+   },
+   "opiniones": {
+    "incidencias": 1160,
+    "filas": 22911,
+    "pct": 5.06
+   },
+   "pagos": {
+    "incidencias": 714,
+    "filas": 63413,
+    "pct": 1.13
+   },
+   "detalle_pedido": {
+    "incidencias": 160,
+    "filas": 103047,
+    "pct": 0.16
+   },
+   "inventario": {
+    "incidencias": 98,
+    "filas": 14475,
+    "pct": 0.68
+   },
+   "pedidos": {
+    "incidencias": 85,
+    "filas": 63413,
+    "pct": 0.13
+   },
+   "logistica": {
+    "incidencias": 50,
+    "filas": 63413,
+    "pct": 0.08
+   },
+   "atencion": {
+    "incidencias": 12,
+    "filas": 5707,
+    "pct": 0.21
+   },
+   "productos": {
+    "incidencias": 8,
+    "filas": 321,
+    "pct": 2.49
+   },
+   "devoluciones": {
+    "incidencias": 0,
+    "filas": 6427,
+    "pct": 0.0
+   },
+   "marketing": {
+    "incidencias": 0,
+    "filas": 96056,
+    "pct": 0.0
+   },
+   "navegacion": {
+    "incidencias": 0,
+    "filas": 32808,
+    "pct": 0.0
+   },
+   "campanias": {
+    "incidencias": 0,
+    "filas": 20,
+    "pct": 0.0
+   }
+  },
+  "incidencias_total": 5031,
+  "pct_incidencias_sobre_registros": 1.03
  }
 }

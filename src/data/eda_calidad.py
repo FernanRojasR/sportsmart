@@ -247,6 +247,63 @@ ov12=ov[en(pd.to_datetime(ov.fecha))]
 kpi["puntuacion_media"]=round(float(ov12.puntuacion.mean()),2)
 kpi["opiniones_negativas_pct"]=pct((ov12.puntuacion<=2).mean())
 out["kpis"]=kpi
+# ---------- Diagnóstico ampliado de calidad: integridad, coherencia, atípicos y viabilidad del tratamiento ----------
+dg={}
+REL=[("pedidos","cliente_id","clientes"),("pedidos","campania_id","campanias"),("detalle_pedido","pedido_id","pedidos"),("detalle_pedido","producto_id","productos"),
+     ("pagos","pedido_id","pedidos"),("logistica","pedido_id","pedidos"),("opiniones","pedido_id","pedidos"),("opiniones","cliente_id","clientes"),
+     ("atencion","cliente_id","clientes"),("atencion","pedido_id","pedidos"),("devoluciones","pedido_id","pedidos"),("devoluciones","producto_id","productos"),
+     ("marketing","cliente_id","clientes"),("marketing","campania_id","campanias"),("navegacion","cliente_id","clientes"),("inventario","producto_id","productos")]
+dg["integridad_referencial"]={f"{h}.{col}->{pad}":int((~t[h][col].dropna().isin(t[pad][col])).sum()) for h,col,pad in REL}
+futuros=p[p.fecha_pedido>pd.Timestamp("2026-10-12")]; ids_fut=set(futuros.pedido_id)
+reg_cli=pd.to_datetime(cu.set_index("cliente_id").fecha_registro)
+env=lg.merge(p[["pedido_id","fecha_pedido"]],on="pedido_id"); envio_antes=env[pd.to_datetime(env.fecha_envio)<env.fecha_pedido.dt.normalize()]
+opi=o.merge(p[["pedido_id","fecha_pedido"]],on="pedido_id"); opi_antes=opi[pd.to_datetime(opi.fecha)<opi.fecha_pedido.dt.normalize()]
+det=d.drop_duplicates(); suma_det=det.groupby("pedido_id").importe.sum(); dif_mt=(p.set_index("pedido_id").monto_total-suma_det).dropna()
+dias_ext=lg[lg.dias_entrega>40]
+dg["coherencia"]={"pedido_antes_de_registro":int((p.fecha_pedido<p.cliente_id.map(reg_cli)).sum()),"clic_sin_apertura":int((mk.hizo_clic&~mk.abrio).sum()),
+  "envio_antes_de_pedido":int(len(envio_antes)),"envio_antes_de_pedido_por_fecha_futura":int(envio_antes.pedido_id.isin(ids_fut).sum()),
+  "opinion_antes_de_pedido":int(len(opi_antes)),"opinion_antes_de_pedido_por_fecha_futura":int(opi_antes.pedido_id.isin(ids_fut).sum()),
+  "monto_total_no_cuadra_con_detalle":int((dif_mt.abs()>0.05).sum()),"pagos_por_pedido_max":int(t["pagos"].groupby("pedido_id").size().max()),"dias_entrega_mayor_40":int(len(dias_ext))}
+def atipicos(s):
+    s=s.dropna(); q1,q3=s.quantile(.25),s.quantile(.75); r=q3-q1
+    return {"iqr":int(((s<q1-1.5*r)|(s>q3+1.5*r)).sum()),"z3":int((((s-s.mean())/s.std()).abs()>3).sum()),"pct_iqr":round(100*float(((s<q1-1.5*r)|(s>q3+1.5*r)).mean()),2),"max":round(float(s.max()),2)}
+dg["atipicos_valores_validos"]={"pedidos.monto_total":atipicos(pv.monto_total),"productos.precio_lista":atipicos(pr.precio_lista),
+  "logistica.dias_entrega":atipicos(lg.dias_entrega[lg.dias_entrega<=40]),"logistica.distancia_km":atipicos(lg.distancia_km[lg.distancia_km>0]),
+  "atencion.horas_resolucion":atipicos(a.horas_resolucion[a.horas_resolucion>=0]),"navegacion.sesiones":atipicos(t["navegacion"].sesiones)}
+# ¿Se puede recuperar cada dato con información de otras columnas o tablas?
+rc={}
+rc["fechas_futuras"]={"casos":int(len(futuros)),"recuperables":int(futuros.pedido_id.map(lg.set_index("pedido_id").fecha_envio).notna().sum())}
+nm=p[p.monto_total.isna()]; rc["monto_total_nulo"]={"casos":int(len(nm)),"recuperables":int(nm.pedido_id.isin(suma_det.index).sum()),"soles":round(float(nm.pedido_id.map(suma_det).sum()),2)}
+dep_norm=c.departamento.str.strip().str.title().replace({"Junin":"Junín","Ancash":"Áncash","Cuzco":"Cusco"})
+mal=~c.departamento.isin(dept_ok); rc["departamento"]={"casos":int(mal.sum()),"recuperables":int(dep_norm[mal].isin(dept_ok).sum())}
+gnd=c.genero.dropna(); no_est=~gnd.isin(["M","F"]); rc["genero"]={"casos":int(no_est.sum()),"recuperables":int(gnd[no_est].str.strip().str.upper().str[0].isin(["M","F"]).sum())}
+pn=pr[pr.precio_lista.isna()]; rc["precio_nulo"]={"casos":int(len(pn)),"recuperables":int(pn.producto_id.isin(d.producto_id).sum())}
+qa=det[(det.cantidad<=0)|(det.cantidad>10)]; qe=(qa.importe/(qa.precio_unitario*(1-qa.descuento)))
+rc["cantidad_anomala"]={"casos":int(len(qa)),"recuperables":int((((qe-qe.round()).abs()<0.01)&qe.round().between(1,10)).sum())}
+pgm=t["pagos"].merge(p[["pedido_id","monto_total"]],on="pedido_id"); nc=pgm[(pgm.importe-pgm.monto_total).abs()>0.05]
+rc["importe_pago"]={"casos":int(len(nc)),"recuperables":int(len(nc)),"exceso_soles":round(float((nc.importe-nc.monto_total).sum()),2)}
+rc["detalle_duplicado"]={"casos":int(d.duplicated().sum()),"importe_soles":round(float(d[d.duplicated()].importe.sum()),2)}
+ivo=iv.sort_values(["producto_id","mes"]).copy(); ivo["sig"]=ivo.groupby("producto_id").stock_inicial.shift(-1)
+est_rec=ivo.stock_final-ivo.stock_inicial-ivo.reposicion_urgente+ivo.unidades_vendidas-ivo.unidades_reingresadas
+est_fin=ivo.stock_inicial+ivo.unidades_recibidas+ivo.reposicion_urgente-ivo.unidades_vendidas+ivo.unidades_reingresadas
+m_nulo=ivo.unidades_recibidas.isna(); m_neg=ivo.stock_final<0; m_ati=(ivo.unidades_recibidas>=5000)
+rc["inventario_recibidas"]={"casos":int((m_nulo|m_ati).sum()),"recuperables":int((((m_nulo|m_ati)&(ivo.stock_final>=0)&(est_rec>=0))).sum())}
+rc["inventario_stock_negativo"]={"casos":int(m_neg.sum()),"recuperables":int((m_neg&(est_fin>=0)&((est_fin==ivo.sig)|ivo.sig.isna())).sum())}
+dg["recuperacion"]=rc
+excl=p[(p.estado!="Cancelado")&(p.monto_total.isna())&(p.fecha_pedido<pd.Timestamp("2026-10-01"))].pedido_id.map(suma_det).sum()
+excl_fut=futuros[futuros.estado!="Cancelado"].pedido_id.map(suma_det).sum()
+dg["impacto_ventas_soles"]={"excluidas_por_monto_nulo":round(float(excl),2),"excluidas_por_fecha_futura":round(float(excl_fut),2),
+  "pct_de_ventas":round(100*float((excl+excl_fut)/pv.monto_total.sum()),2)}
+inc={"clientes":45+cal["clientes"]["nulos"]["edad"]+cal["clientes"]["edad_fuera_rango"]+cal["clientes"]["nulos"]["genero"]+cal["clientes"]["genero_no_estandar"]+cal["clientes"]["departamento_mal_escrito"],
+ "productos":cal["productos"]["nulos"]["marca"]+cal["productos"]["precio_nulo"],"pedidos":cal["pedidos"]["nulos"]["monto_total"]+cal["pedidos"]["fechas_futuras"],
+ "detalle_pedido":cal["detalle_pedido"]["duplicados_exactos"]+cal["detalle_pedido"]["cantidad_no_positiva"]+cal["detalle_pedido"]["cantidad_atipica_mayor_10"],
+ "pagos":cal["pagos"]["nulos"]["metodo"]+cal["pagos"]["importe_no_cuadra"],"logistica":cal["logistica"]["distancia_negativa"]+len(dias_ext),
+ "opiniones":cal["opiniones"]["puntuacion_fuera_1_5"]+cal["opiniones"]["comentario_vacio"],"atencion":cal["atencion"]["horas_negativas"],
+ "inventario":cal["inventario"]["nulos"]["unidades_recibidas"]+cal["inventario"]["duplicados_exactos"]+cal["inventario"]["balance_no_cuadra"],
+ "devoluciones":0,"marketing":0,"navegacion":0,"campanias":0}
+dg["incidencias_por_tabla"]={k:{"incidencias":int(v),"filas":int(len(t[k])),"pct":round(100*v/len(t[k]),2)} for k,v in sorted(inc.items(),key=lambda kv:-kv[1])}
+dg["incidencias_total"]=int(sum(inc.values())); dg["pct_incidencias_sobre_registros"]=round(100*sum(inc.values())/out["total_registros"],2)
+out["calidad_diagnostico"]=dg
 os.makedirs(os.path.join(B,"reports"),exist_ok=True)
 with open(os.path.join(B,"reports","eda.json"),"w",encoding="utf-8") as fh:
     json.dump(out,fh,ensure_ascii=False,indent=1)

@@ -16,6 +16,7 @@
 | Asociación | Lift de las reglas seleccionadas | > 1,5 con soporte ≥ 1 % |
 | Clustering | Silhouette | > 0,4 y segmentos interpretables |
 | Series de tiempo | MAPE en los últimos 6 meses | < 15 % |
+| Grafos | Modularidad de las comunidades | > 0,3 |
 | Regresión | RMSE / R² | R² > 0,6 |
 | Clasificación (churn) | Recall de la clase "abandona", AUC | AUC > 0,75 |
 | NLP | F1 de sentimiento | > 0,75 |

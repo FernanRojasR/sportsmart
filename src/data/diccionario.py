@@ -1,4 +1,4 @@
-"""Genera docs/02_datos/diccionario_datos.xlsx con el diccionario y perfil de las 12 tablas."""
+"""Genera docs/02_datos/diccionario_datos.xlsx con el diccionario y perfil de las 13 tablas."""
 import pandas as pd, os
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -51,6 +51,12 @@ D={
  ("distancia_km","Numérico","Distancia aproximada del envío"),("costo_envio","Numérico","Costo cobrado al cliente (0 si compra > S/ 199)"),
  ("fecha_envio","Fecha","Fecha de despacho"),("dias_entrega","Numérico","Días reales de entrega; vacío si no se entregó"),
  ("dias_prometidos","Numérico","Plazo prometido (3 Lima/Callao, 6 provincias)"),("entrega_a_tiempo","Lógico","dias_entrega ≤ dias_prometidos")]),
+"inventario":("Cierre mensual de stock por producto",[
+ ("producto_id","ID","Producto (FK a productos)"),("mes","Fecha","Mes del cierre (AAAA-MM)"),("stock_inicial","Numérico","Unidades disponibles al inicio del mes"),
+ ("unidades_recibidas","Numérico","Unidades recibidas por la reposición programada"),("reposicion_urgente","Numérico","Unidades repuestas de urgencia para cubrir un faltante"),
+ ("unidades_vendidas","Numérico","Unidades vendidas en el mes (pedidos no cancelados)"),("unidades_reingresadas","Numérico","Unidades devueltas aptas para reventa (excluye defectuosas)"),
+ ("stock_final","Numérico","stock_inicial + recibidas + urgente − vendidas + reingresadas"),("dias_sin_stock","Numérico","Días estimados del mes sin stock disponible"),
+ ("quiebre_stock","Lógico","Indica si el mes requirió reposición urgente")]),
 }
 hdr=Font(name="Arial",bold=True,color="FFFFFF"); fill=PatternFill("solid",fgColor="14213D"); base=Font(name="Arial",size=10)
 thin=Side(style="thin",color="D3CFC3"); brd=Border(bottom=thin)
@@ -64,7 +70,7 @@ for t,(desc,campos) in D.items():
     assert [c for c,_,_ in campos]==list(df.columns), t
     tabla_rows.append((t,desc,len(df),len(df.columns)))
     for c,tipo,d in campos:
-        s=df[c].replace(r"^\s*$",pd.NA,regex=True) if df[c].dtype==object else df[c]
+        s=df[c].replace(r"^\s*$",pd.NA,regex=True) if pd.api.types.is_string_dtype(df[c]) else df[c]
         ej=s.dropna().iloc[0]
         ws.append([t,c,tipo,d,str(ej),round(float(s.isna().mean()),4),int(s.nunique())])
 for cell in ws[1]: cell.font=hdr; cell.fill=fill; cell.alignment=Alignment(vertical="center")

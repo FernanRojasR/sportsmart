@@ -225,6 +225,38 @@ for c in campanias.itertuples():
     mk+= list(zip([c.campania_id]*n,sel,ab,cl))
 marketing=pd.DataFrame(mk,columns=["campania_id","cliente_id","abrio","hizo_clic"])
 
+# ---------------- INVENTARIO (cierre mensual por producto) ----------------
+# Generador propio: así las otras 12 tablas siguen idénticas con la semilla 42.
+# La reposición sigue una regla ingenua (promedio de los 3 meses previos, sin estacionalidad),
+# por lo que los picos de demanda producen quiebres y los meses siguientes, excesos.
+rng_inv=np.random.default_rng(4242)
+meses_inv=pd.period_range(INI,FIN,freq="M")
+vend=detalle.merge(pedidos.loc[pedidos.estado!="Cancelado",["pedido_id","fecha_pedido"]],on="pedido_id")
+vm=(vend.groupby(["producto_id",vend.fecha_pedido.dt.to_period("M")]).cantidad.sum()
+      .unstack(fill_value=0).reindex(index=productos.producto_id,columns=meses_inv,fill_value=0))
+dev_r=devoluciones[devoluciones.motivo!="Producto defectuoso"].merge(detalle[["pedido_id","producto_id","cantidad"]],on=["pedido_id","producto_id"])
+rm=(dev_r.groupby(["producto_id",dev_r.fecha_devolucion.dt.to_period("M")]).cantidad.sum()
+      .unstack(fill_value=0).reindex(index=productos.producto_id,columns=meses_inv,fill_value=0))
+inv=[]
+for prod in productos.producto_id:
+    v,r=vm.loc[prod].values,rm.loc[prod].values
+    cobertura=rng_inv.uniform(1.3,2.0)
+    base=max(1.0,v[:3].mean())
+    stock=int(np.ceil(cobertura*base))
+    for t,m in enumerate(meses_inv):
+        ref=v[max(0,t-3):t].mean() if t>0 else base
+        objetivo=int(np.ceil(cobertura*max(1.0,ref)))
+        recibidas=max(0,int(round((objetivo-stock)*rng_inv.uniform(.85,1.1))))
+        disponible=stock+recibidas
+        urgente=max(0,int(v[t])-disponible)
+        final=disponible+urgente-int(v[t])+int(r[t])
+        dias_mes=m.days_in_month
+        dias_sin=int(np.ceil(dias_mes*urgente/v[t])) if urgente>0 else 0
+        inv.append((prod,str(m),stock,recibidas,urgente,int(v[t]),int(r[t]),final,dias_sin,urgente>0))
+        stock=final
+inventario=pd.DataFrame(inv,columns=["producto_id","mes","stock_inicial","unidades_recibidas","reposicion_urgente",
+    "unidades_vendidas","unidades_reingresadas","stock_final","dias_sin_stock","quiebre_stock"])
+
 # =============== INYECCIÓN DE PROBLEMAS DE CALIDAD ===============
 # Clientes: nulos, edades imposibles, género inconsistente, departamentos mal escritos, duplicados
 idx=rng.choice(N_CLI,int(N_CLI*.06),replace=False); clientes.loc[idx,"edad"]=np.nan
@@ -254,9 +286,16 @@ idx=rng.choice(len(opiniones),15,replace=False); opiniones.loc[idx,"puntuacion"]
 idx=rng.choice(len(opiniones),int(len(opiniones)*.05),replace=False); opiniones.loc[idx,"comentario"]=rng.choice(["",None," "],len(idx))
 # Atención: tiempos negativos
 idx=rng.choice(nat,12,replace=False); atencion.loc[idx,"horas_resolucion"]=-atencion.loc[idx,"horas_resolucion"]
+# Inventario: recepciones sin registrar o atípicas, stock negativo, duplicados
+inventario["unidades_recibidas"]=inventario.unidades_recibidas.astype("Int64")
+n_inv=len(inventario)
+idx=rng_inv.choice(n_inv,40,replace=False); inventario.loc[idx,"unidades_recibidas"]=pd.NA
+idx=rng_inv.choice(n_inv,10,replace=False); inventario.loc[idx,"unidades_recibidas"]=rng_inv.integers(5000,20000,10)
+idx=rng_inv.choice(n_inv,20,replace=False); inventario.loc[idx,"stock_final"]=-rng_inv.integers(1,50,20)
+inventario=pd.concat([inventario,inventario.sample(30,random_state=6)]).reset_index(drop=True)
 
 tablas=dict(clientes=clientes,productos=productos,pedidos=pedidos,detalle_pedido=detalle,pagos=pagos,campanias=campanias,
-  marketing=marketing,navegacion=navegacion,atencion=atencion,opiniones=opiniones,devoluciones=devoluciones,logistica=logistica)
+  marketing=marketing,navegacion=navegacion,atencion=atencion,opiniones=opiniones,devoluciones=devoluciones,logistica=logistica,inventario=inventario)
 for k,v in tablas.items():
     v.to_csv(os.path.join(OUT,f"{k}.csv"),index=False)
     print(f"{k:16s} {v.shape}")

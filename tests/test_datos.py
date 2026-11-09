@@ -28,3 +28,14 @@ def test_integridad_pedidos_clientes():
     clientes = pd.read_csv(RAW / "clientes.csv", usecols=["cliente_id"])
     huerfanos = ~pedidos.cliente_id.isin(clientes.cliente_id)
     assert huerfanos.mean() < 0.01
+
+
+def test_integridad_inventario_productos():
+    inventario = pd.read_csv(RAW / "inventario.csv", usecols=["producto_id"])
+    productos = pd.read_csv(RAW / "productos.csv", usecols=["producto_id"])
+    assert inventario.producto_id.isin(productos.producto_id).all()
+
+
+def test_inventario_una_fila_por_producto_y_mes():
+    inventario = pd.read_csv(RAW / "inventario.csv").drop_duplicates()
+    assert not inventario.duplicated(["producto_id", "mes"]).any()

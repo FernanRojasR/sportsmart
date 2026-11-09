@@ -12,7 +12,7 @@ Proyecto del curso **Minería de Datos** — Facultad de Ingeniería de Sistemas
 
 SportSmart Perú es una tienda online de ropa y calzado deportivo que registra pedidos, pagos, envíos, campañas, navegación, atención y opiniones de sus clientes, pero solo los usa para reportes descriptivos. El EDA inicial muestra que **el 48,0 % de los 15 000 clientes registrados no tiene ninguna compra válida entre ene-2023 y sep-2026**, que **el 71,0 % de quienes sí compraron lleva más de 180 días sin hacerlo** y que **el 20 % de los compradores genera el 65,5 % de las ventas**.
 
-La plataforma integra 12 fuentes de datos y aplica minería de datos para:
+La plataforma integra 13 fuentes de datos y aplica minería de datos para:
 
 | Pregunta de negocio | Técnica |
 |---|---|
@@ -28,7 +28,7 @@ La plataforma integra 12 fuentes de datos y aplica minería de datos para:
 
 ## 📊 Datos
 
-Dataset sintético integrado: **12 tablas, 472 581 registros** (ene-2023 a sep-2026), con problemas de calidad intencionales para la fase de comprensión de datos. Diccionario de 82 campos en [`docs/02_datos/`](docs/02_datos/).
+Dataset sintético integrado: **13 tablas, 487 056 registros** (ene-2023 a sep-2026), con problemas de calidad intencionales para la fase de comprensión de datos. Diccionario de 92 campos en [`docs/02_datos/`](docs/02_datos/).
 
 ## 🗂️ Estructura
 
@@ -40,7 +40,7 @@ sportsmart/
 ├── docker-compose.yml
 │
 ├── data/
-│   ├── raw/                 ← 12 CSV originales (no editar)
+│   ├── raw/                 ← 13 CSV originales (no editar)
 │   ├── processed/           ← datos limpios y features
 │   └── external/            ← fuentes externas
 │

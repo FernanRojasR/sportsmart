@@ -42,6 +42,11 @@ cal["opiniones"]["puntuacion_fuera_1_5"]=int((~o.puntuacion.between(1,5)).sum())
 cal["opiniones"]["comentario_vacio"]=int(o.comentario.fillna("").str.strip().eq("").sum())
 a=t["atencion"]; cal["atencion"]["horas_negativas"]=int((a.horas_resolucion<0).sum())
 pr=t["productos"]; cal["productos"]["precio_nulo"]=int(pr.precio_lista.isna().sum())
+iv=t["inventario"].drop_duplicates()
+balance=iv.stock_inicial+iv.unidades_recibidas+iv.reposicion_urgente-iv.unidades_vendidas+iv.unidades_reingresadas
+cal["inventario"]["stock_final_negativo"]=int((iv.stock_final<0).sum())
+cal["inventario"]["balance_no_cuadra"]=int((balance.notna()&(balance!=iv.stock_final)).sum())
+cal["inventario"]["unidades_recibidas_max"]=int(iv.unidades_recibidas.max())
 out["calidad"]=cal
 
 # ---------- EDA (sobre registros válidos) ----------
@@ -137,6 +142,16 @@ for (a_,b_),n in cnt.most_common(6):
     sup=n/N; lift=sup/((sub_cnt[a_]/N)*(sub_cnt[b_]/N))
     pares.append({"par":f"{a_} + {b_}","soporte_pct":round(100*sup,2),"lift":round(lift,2)})
 eda["top_pares"]=pares
+# inventario (quiebre = reposición urgente; exceso = stock final mayor a 2 meses de venta media del producto)
+pico=iv.mes.str[5:7].isin(["11","12"])
+val=iv[(balance==iv.stock_final)&(iv.stock_final>=0)]
+media_prod=val.groupby("producto_id").unidades_vendidas.transform("mean")
+qc=iv.merge(pr[["producto_id","categoria"]],on="producto_id").groupby("categoria").quiebre_stock.mean().sort_values(ascending=False)
+eda["inventario"]={"pct_producto_mes_con_quiebre":round(100*float(iv.quiebre_stock.mean()),1),
+  "pct_quiebre_nov_dic":round(100*float(iv.quiebre_stock[pico].mean()),1),"pct_quiebre_resto_meses":round(100*float(iv.quiebre_stock[~pico].mean()),1),
+  "dias_sin_stock_medio_en_quiebre":round(float(iv.dias_sin_stock[iv.quiebre_stock].mean()),1),
+  "pct_producto_mes_con_exceso":round(100*float((val.stock_final>2*media_prod).mean()),1),
+  "pct_quiebre_categoria":{k:round(100*v,1) for k,v in qc.items()}}
 out["eda"]=eda
 os.makedirs(os.path.join(B,"reports"),exist_ok=True)
 with open(os.path.join(B,"reports","eda.json"),"w",encoding="utf-8") as fh:

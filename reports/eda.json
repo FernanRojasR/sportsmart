@@ -20,6 +20,10 @@
    "filas": 6427,
    "columnas": 7
   },
+  "inventario": {
+   "filas": 14475,
+   "columnas": 10
+  },
   "logistica": {
    "filas": 63413,
    "columnas": 9
@@ -49,7 +53,7 @@
    "columnas": 8
   }
  },
- "total_registros": 472581,
+ "total_registros": 487056,
  "calidad": {
   "atencion": {
    "nulos": {},
@@ -109,6 +113,16 @@
    },
    "pct_celdas_nulas": 2.53,
    "duplicados_exactos": 0
+  },
+  "inventario": {
+   "nulos": {
+    "unidades_recibidas": 39
+   },
+   "pct_celdas_nulas": 0.03,
+   "duplicados_exactos": 30,
+   "stock_final_negativo": 20,
+   "balance_no_cuadra": 29,
+   "unidades_recibidas_max": 17459
   },
   "logistica": {
    "nulos": {
@@ -391,6 +405,20 @@
     "soporte_pct": 3.01,
     "lift": 2.84
    }
-  ]
+  ],
+  "inventario": {
+   "pct_producto_mes_con_quiebre": 10.6,
+   "pct_quiebre_nov_dic": 29.4,
+   "pct_quiebre_resto_meses": 7.7,
+   "dias_sin_stock_medio_en_quiebre": 8.3,
+   "pct_producto_mes_con_exceso": 8.9,
+   "pct_quiebre_categoria": {
+    "Equipamiento": 12.2,
+    "Accesorios": 11.9,
+    "Ropa superior": 10.1,
+    "Calzado": 9.6,
+    "Ropa inferior": 8.6
+   }
+  }
  }
 }

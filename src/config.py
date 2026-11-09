@@ -21,5 +21,5 @@ FECHA_CORTE = "2026-09-30"  # cierre del periodo de análisis
 
 TABLAS = [
     "clientes", "productos", "pedidos", "detalle_pedido", "pagos", "campanias",
-    "marketing", "navegacion", "atencion", "opiniones", "devoluciones", "logistica",
+    "marketing", "navegacion", "atencion", "opiniones", "devoluciones", "logistica", "inventario",
 ]

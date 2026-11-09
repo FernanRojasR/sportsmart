@@ -71,7 +71,14 @@ eda["pedidos_por_cliente"]={"media":round(float(f.mean()),2),"mediana":float(f.m
   "pct_una_sola_compra":round(100*float((f==1).mean()),1)}
 # recencia al cierre
 rec=(pd.Timestamp("2026-09-30")-pv.groupby("cliente_id").fecha_pedido.max()).dt.days
-eda["pct_clientes_sin_compra_180d"]=round(100*float((rec>180).mean()),1)
+eda["pct_compradores_sin_compra_180d"]=round(100*float((rec>180).mean()),1)  # base: clientes con al menos una compra válida
+# misma medida sobre toda la base de clientes (la historia de pedidos empieza en ene-2023)
+cu=c.drop_duplicates("cliente_id"); sin_compra=~cu.cliente_id.isin(pv.cliente_id)
+eda["clientes_unicos"]=int(len(cu))
+eda["pct_clientes_sin_compra_valida"]=round(100*float(sin_compra.mean()),1)
+eda["pct_clientes_total_sin_compra_180d"]=round(100*float((sin_compra.sum()+(rec>180).sum())/len(cu)),1)
+desde_2023=pd.to_datetime(cu.fecha_registro)>=pd.Timestamp("2023-01-01")
+eda["pct_sin_compra_valida_registrados_desde_2023"]=round(100*float(sin_compra[desde_2023].mean()),1)
 # concentración de ventas (Pareto)
 mc=pv.groupby("cliente_id").monto_total.sum().sort_values(ascending=False)
 eda["pct_ventas_top20_clientes"]=round(100*float(mc.head(int(len(mc)*.2)).sum()/mc.sum()),1)
@@ -132,5 +139,6 @@ for (a_,b_),n in cnt.most_common(6):
 eda["top_pares"]=pares
 out["eda"]=eda
 os.makedirs(os.path.join(B,"reports"),exist_ok=True)
-json.dump(out,open(os.path.join(B,"reports","eda.json"),"w"),ensure_ascii=False,indent=1)
+with open(os.path.join(B,"reports","eda.json"),"w",encoding="utf-8") as fh:
+    json.dump(out,fh,ensure_ascii=False,indent=1)
 print(json.dumps(out,ensure_ascii=False,indent=1))

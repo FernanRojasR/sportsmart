@@ -19,11 +19,16 @@ Evidencia del EDA (Presentación 1, `reports/eda.json`):
 
 | Indicador | Valor |
 |---|---|
-| Clientes sin compra en los últimos 180 días | 71,0 % |
-| Clientes con una sola compra | 24,8 % |
-| Ventas concentradas en el 20 % de clientes | 65,5 % |
+| Clientes registrados sin ninguna compra válida (ene-2023 a sep-2026) | 48,0 % |
+| Clientes registrados desde 2023 sin ninguna compra válida | 41,2 % |
+| Compradores sin compra en los últimos 180 días | 71,0 % |
+| Total de clientes sin compra en los últimos 180 días | 84,9 % |
+| Compradores con una sola compra | 24,8 % |
+| Ventas concentradas en el 20 % de compradores | 65,5 % |
 | Puntuación media con entrega a tiempo vs. con retraso | 4,08 vs. 2,75 |
 | Tasa de apertura / CTR de campañas | 27,9 % / 9,7 % |
+
+> **Bases de cálculo:** "clientes" son los 15 000 registrados y "compradores" los 7 802 con al menos un pedido válido (no cancelado, con monto y fecha dentro del periodo). La historia de pedidos empieza en ene-2023, así que un cliente registrado en 2021-2022 pudo haber comprado antes; por eso se muestra también la cifra de registrados desde 2023.
 
 ## 3. Propuesta de solución
 

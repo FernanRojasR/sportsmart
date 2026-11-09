@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 # SportSmart Perú · Plataforma Inteligente de Clientes
 
 **Plataforma Inteligente para el Análisis, Segmentación y Predicción de Clientes en el e-commerce de ropa deportiva**
@@ -13,7 +10,7 @@ Proyecto del curso **Minería de Datos** — Facultad de Ingeniería de Sistemas
 
 ## 💡 Idea del proyecto
 
-SportSmart Perú es una tienda online de ropa y calzado deportivo que registra pedidos, pagos, envíos, campañas, navegación, atención y opiniones de sus clientes, pero solo los usa para reportes descriptivos. El EDA inicial muestra que **71 % de los clientes no compra hace más de 180 días** y que **el 20 % de los clientes genera el 65,5 % de las ventas**.
+SportSmart Perú es una tienda online de ropa y calzado deportivo que registra pedidos, pagos, envíos, campañas, navegación, atención y opiniones de sus clientes, pero solo los usa para reportes descriptivos. El EDA inicial muestra que **el 48,0 % de los 15 000 clientes registrados no tiene ninguna compra válida entre ene-2023 y sep-2026**, que **el 71,0 % de quienes sí compraron lleva más de 180 días sin hacerlo** y que **el 20 % de los compradores genera el 65,5 % de las ventas**.
 
 La plataforma integra 12 fuentes de datos y aplica minería de datos para:
 
@@ -126,4 +123,3 @@ docker compose up notebooks         # Jupyter en http://localhost:8888
 - Lógica reutilizable en `src/`; los notebooks solo la importan y muestran resultados.
 - `data/raw` nunca se modifica; todo lo derivado va a `data/processed`.
 - Ramas: `main` (entregas), `dev` (integración), `feature/<tema>` por técnica.
->>>>>>> 8b32112 (Proyecto Sportsmart)

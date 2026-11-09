@@ -214,13 +214,13 @@
    "2025-11": 436170.0,
    "2025-12": 495501.0,
    "2026-01": 395615.0,
-   "2026-02": 313198.0,
+   "2026-02": 313199.0,
    "2026-03": 387024.0,
    "2026-04": 298479.0,
    "2026-05": 336054.0,
    "2026-06": 289309.0,
    "2026-07": 403205.0,
-   "2026-08": 327114.0,
+   "2026-08": 327115.0,
    "2026-09": 335112.0
   },
   "ventas_anuales": {
@@ -258,7 +258,11 @@
    "p90": 18.0,
    "pct_una_sola_compra": 24.8
   },
-  "pct_clientes_sin_compra_180d": 71.0,
+  "pct_compradores_sin_compra_180d": 71.0,
+  "clientes_unicos": 15000,
+  "pct_clientes_sin_compra_valida": 48.0,
+  "pct_clientes_total_sin_compra_180d": 84.9,
+  "pct_sin_compra_valida_registrados_desde_2023": 41.2,
   "pct_ventas_top20_clientes": 65.5,
   "ventas_departamento_pct": {
    "Lima": 47.4,

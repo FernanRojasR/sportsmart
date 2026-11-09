@@ -17,6 +17,7 @@ shap>=0.44           # src/explainability
 xgboost>=2.0         # 07_regression y 08_classification
 prophet>=1.1         # 05_timeseries
 streamlit>=1.30      # primer prototipo
+imbalanced-learn>=0.12  # balanceo: SMOTE, ADASYN, under y oversampling
 
 # --- Backend (cuando se implemente) ---
 # fastapi>=0.110

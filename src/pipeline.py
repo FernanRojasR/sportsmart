@@ -7,7 +7,7 @@ import runpy
 import sys
 from pathlib import Path
 
-from src.features import preparacion
+from src.features import preparacion, seleccion, variables
 
 PASOS = ["generar_dataset.py", "eda_calidad.py", "diccionario.py"]
 BASE = Path(__file__).resolve().parent / "data"
@@ -20,6 +20,9 @@ def main() -> None:
         runpy.run_path(str(BASE / paso), run_name="__main__")
     print("\n=== preparacion ===")
     preparacion.main()
+    print("\n=== variables y selección ===")
+    variables.main()
+    seleccion.main()
 
 
 if __name__ == "__main__":

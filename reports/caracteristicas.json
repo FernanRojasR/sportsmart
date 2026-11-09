@@ -1,0 +1,381 @@
+{
+ "abandono": {
+  "filas": 2529,
+  "tasa_abandono_pct": 46.8,
+  "permanece": 1345,
+  "abandona": 1184,
+  "entrenamiento": 1896,
+  "prueba": 633
+ },
+ "codificacion": {
+  "one_hot": {
+   "genero": 3,
+   "zona": 2,
+   "canal_adquisicion": 5,
+   "deporte_preferido": 6
+  },
+  "columnas_tras_one_hot": 51,
+  "label_encoding_abc": {
+   "A": 0,
+   "B": 1,
+   "C": 2
+  }
+ },
+ "escalamiento": {
+  "recencia": {
+   "original_max": 1367.0,
+   "standard_media": 0.0,
+   "standard_desv": 1.0,
+   "minmax_min": 0.0,
+   "minmax_max": 1.0
+  },
+  "frecuencia": {
+   "original_max": 267.0,
+   "standard_media": 0.0,
+   "standard_desv": 1.0,
+   "minmax_min": 0.0,
+   "minmax_max": 1.0
+  },
+  "monetario": {
+   "original_max": 62064.75,
+   "standard_media": 0.0,
+   "standard_desv": 1.0,
+   "minmax_min": 0.0,
+   "minmax_max": 1.0
+  }
+ },
+ "atipicos": {
+  "recencia": {
+   "iqr": 0,
+   "z3": 0,
+   "asimetria": 0.39,
+   "asimetria_log": -1.42
+  },
+  "frecuencia": {
+   "iqr": 704,
+   "z3": 155,
+   "asimetria": 5.19,
+   "asimetria_log": 0.78
+  },
+  "monetario": {
+   "iqr": 706,
+   "z3": 161,
+   "asimetria": 5.15,
+   "asimetria_log": -0.07
+  },
+  "ticket_medio": {
+   "iqr": 304,
+   "z3": 127,
+   "asimetria": 1.25,
+   "asimetria_log": -0.68
+  }
+ },
+ "colinealidad": {
+  "umbral": 0.85,
+  "columnas_antes": 51,
+  "columnas_despues": 36,
+  "retiradas": [
+   {
+    "retirada": "minutos_totales",
+    "conservada": "sesiones",
+    "rho": 1.0
+   },
+   {
+    "retirada": "paginas_vistas",
+    "conservada": "sesiones",
+    "rho": 1.0
+   },
+   {
+    "retirada": "margen_total",
+    "conservada": "monetario",
+    "rho": 0.998
+   },
+   {
+    "retirada": "sesiones",
+    "conservada": "tiene_navegacion",
+    "rho": 0.988
+   },
+   {
+    "retirada": "items",
+    "conservada": "monetario",
+    "rho": 0.977
+   },
+   {
+    "retirada": "descuento_medio",
+    "conservada": "pct_con_campania",
+    "rho": 0.961
+   },
+   {
+    "retirada": "carritos_abandonados",
+    "conservada": "tiene_navegacion",
+    "rho": 0.952
+   },
+   {
+    "retirada": "genero_M",
+    "conservada": "genero_F",
+    "rho": 0.946
+   },
+   {
+    "retirada": "monetario",
+    "conservada": "frecuencia",
+    "rho": 0.943
+   },
+   {
+    "retirada": "frecuencia",
+    "conservada": "frecuencia_365d",
+    "rho": 0.936
+   },
+   {
+    "retirada": "monetario_365d",
+    "conservada": "frecuencia_365d",
+    "rho": 0.918
+   },
+   {
+    "retirada": "n_categorias",
+    "conservada": "n_subcategorias",
+    "rho": 0.908
+   },
+   {
+    "retirada": "tasa_devolucion",
+    "conservada": "devoluciones",
+    "rho": 0.885
+   },
+   {
+    "retirada": "monetario_180d",
+    "conservada": "frecuencia_180d",
+    "rho": 0.88
+   },
+   {
+    "retirada": "frecuencia_365d",
+    "conservada": "frecuencia_180d",
+    "rho": 0.879
+   }
+  ],
+  "vif_max_antes": 1029.97,
+  "vif_despues": {
+   "ticket_medio": 2.63,
+   "ticket_max": 4.65,
+   "pct_con_campania": 1.05,
+   "dias_entrega_medio": 1.32,
+   "recencia": 1.5,
+   "longitud": 10.05,
+   "intervalo_medio": 1.48,
+   "frecuencia_180d": 3.39,
+   "pct_retraso": 1.42,
+   "n_subcategorias": 6.09,
+   "devoluciones": 2.53,
+   "tickets": 4.08,
+   "reclamos": 2.94,
+   "puntuacion_media": 1.13,
+   "campanias_recibidas": 3.65,
+   "tasa_apertura": 1.4,
+   "tasa_clic": 1.39,
+   "edad": 1.01,
+   "antiguedad": 8.56
+  }
+ },
+ "importancia": {
+  "cobertura": 0.9,
+  "n_seleccionadas": 17,
+  "seleccionadas": [
+   "recencia",
+   "antiguedad",
+   "frecuencia_180d",
+   "intervalo_medio",
+   "ticket_max",
+   "ticket_medio",
+   "longitud",
+   "dias_entrega_medio",
+   "n_subcategorias",
+   "edad",
+   "pct_con_campania",
+   "campanias_recibidas",
+   "tasa_apertura",
+   "puntuacion_media",
+   "pct_retraso",
+   "devoluciones",
+   "tasa_clic"
+  ],
+  "importancias": {
+   "recencia": 0.2181,
+   "antiguedad": 0.0811,
+   "frecuencia_180d": 0.0791,
+   "intervalo_medio": 0.0704,
+   "ticket_max": 0.0646,
+   "ticket_medio": 0.0565,
+   "longitud": 0.05,
+   "dias_entrega_medio": 0.0414,
+   "n_subcategorias": 0.0401,
+   "edad": 0.0393,
+   "pct_con_campania": 0.032,
+   "campanias_recibidas": 0.0298,
+   "tasa_apertura": 0.0272,
+   "puntuacion_media": 0.0248,
+   "pct_retraso": 0.0188,
+   "devoluciones": 0.0151,
+   "tasa_clic": 0.0141,
+   "tickets": 0.0127,
+   "genero_F": 0.0087,
+   "zona_Provincias": 0.007,
+   "canal_adquisicion_Orgánico": 0.007,
+   "deporte_preferido_Training": 0.0063,
+   "reclamos": 0.0062,
+   "canal_adquisicion_Facebook/Instagram": 0.006,
+   "tiene_opinion": 0.0058,
+   "deporte_preferido_Running": 0.0056,
+   "tiene_navegacion": 0.0055,
+   "canal_adquisicion_Google Ads": 0.0051,
+   "deporte_preferido_Fútbol": 0.0048,
+   "compra_unica": 0.0041,
+   "canal_adquisicion_TikTok": 0.0036,
+   "deporte_preferido_Outdoor": 0.0025,
+   "canal_adquisicion_Referido": 0.0024,
+   "deporte_preferido_Yoga": 0.0023,
+   "deporte_preferido_Ciclismo": 0.0015,
+   "genero_No declarado": 0.0006
+  }
+ },
+ "comparacion_variables": {
+  "Todas": {
+   "auc": 0.784,
+   "recall": 0.767
+  },
+  "Sin colinealidad": {
+   "auc": 0.791,
+   "recall": 0.767
+  },
+  "Seleccionadas": {
+   "auc": 0.787,
+   "recall": 0.753
+  }
+ },
+ "reduccion": {
+  "pca_varianza_acumulada": [
+   0.251,
+   0.376,
+   0.474,
+   0.56,
+   0.642,
+   0.701,
+   0.756,
+   0.808,
+   0.858,
+   0.89,
+   0.919,
+   0.947,
+   0.967,
+   0.981,
+   0.99,
+   0.997,
+   1.0
+  ],
+  "pca_componentes_90": 11,
+  "n_variables": 17,
+  "modelos": {
+   "Logística con variables seleccionadas": {
+    "auc": 0.774,
+    "recall": 0.682
+   },
+   "Logística con PCA (90 %)": {
+    "auc": 0.775,
+    "recall": 0.679
+   },
+   "LDA": {
+    "auc": 0.775,
+    "recall": 0.679
+   },
+   "QDA": {
+    "auc": 0.756,
+    "recall": 0.622
+   }
+  },
+  "numericas_continuas": [
+   "recencia",
+   "antiguedad",
+   "frecuencia_180d",
+   "intervalo_medio",
+   "ticket_max",
+   "ticket_medio",
+   "longitud",
+   "dias_entrega_medio",
+   "n_subcategorias",
+   "edad",
+   "pct_con_campania",
+   "campanias_recibidas",
+   "tasa_apertura",
+   "puntuacion_media",
+   "pct_retraso",
+   "devoluciones",
+   "tasa_clic"
+  ]
+ },
+ "balanceo": {
+  "Sin balanceo": {
+   "permanece": 1008,
+   "abandona": 888,
+   "auc": 0.774,
+   "recall": 0.682
+  },
+  "Undersampling": {
+   "permanece": 888,
+   "abandona": 888,
+   "auc": 0.775,
+   "recall": 0.713
+  },
+  "Oversampling": {
+   "permanece": 1008,
+   "abandona": 1008,
+   "auc": 0.773,
+   "recall": 0.73
+  },
+  "SMOTE": {
+   "permanece": 1008,
+   "abandona": 1008,
+   "auc": 0.774,
+   "recall": 0.713
+  },
+  "ADASYN": {
+   "no_aplica": "No samples will be generated with the provided ratio settings."
+  }
+ },
+ "abc_xyz": {
+  "abc": {
+   "A": 162,
+   "B": 86,
+   "C": 73
+  },
+  "xyz": {
+   "X": 172,
+   "Y": 137,
+   "Z": 12
+  },
+  "matriz": {
+   "A": {
+    "X": 130,
+    "Y": 32,
+    "Z": 0
+   },
+   "B": {
+    "X": 34,
+    "Y": 52,
+    "Z": 0
+   },
+   "C": {
+    "X": 8,
+    "Y": 53,
+    "Z": 12
+   }
+  },
+  "ingresos_pct_abc": {
+   "A": 79.8,
+   "B": 15.2,
+   "C": 5.0
+  }
+ },
+ "clientes": {
+  "filas": 7812,
+  "columnas": 51,
+  "clv_mediana": 128.74,
+  "clv_p90": 680.86
+ }
+}

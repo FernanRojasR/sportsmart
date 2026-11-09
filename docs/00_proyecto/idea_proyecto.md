@@ -20,8 +20,8 @@ Evidencia del EDA (Presentación 1, `reports/eda.json`):
 | Indicador | Valor |
 |---|---|
 | Clientes registrados sin ninguna compra válida (ene-2023 a sep-2026) | 48,0 % |
-| Clientes registrados desde 2023 sin ninguna compra válida | 41,2 % |
-| Compradores sin compra en los últimos 180 días | 71,0 % |
+| Clientes registrados desde 2023 sin ninguna compra válida | 41,1 % |
+| Compradores sin compra en los últimos 180 días | 70,9 % |
 | Total de clientes sin compra en los últimos 180 días | 84,9 % |
 | Compradores con una sola compra | 24,8 % |
 | Ventas concentradas en el 20 % de compradores | 65,5 % |
@@ -43,7 +43,7 @@ Evidencia del EDA (Presentación 1, `reports/eda.json`):
 | Quiebres o excesos de inventario | Quiebres de 29,4 % en noviembre-diciembre frente a 7,7 % el resto del año, y 8,9 % de productos-mes con exceso (tabla `inventario`) | ¿Cuál es la tendencia futura de las ventas? |
 | Insatisfacción por el servicio | Puntuación de 4,08 con entrega a tiempo y 2,75 con retraso. Es una asociación, no prueba causalidad | ¿Qué opinan los clientes y qué temas aparecen? |
 
-> **Bases de cálculo:** "clientes" son los 15 000 registrados y "compradores" los 7 802 con al menos un pedido válido (no cancelado, con monto y fecha dentro del periodo). La historia de pedidos empieza en ene-2023, así que un cliente registrado en 2021-2022 pudo haber comprado antes; por eso se muestra también la cifra de registrados desde 2023.
+> **Bases de cálculo:** "clientes" son los 15 000 registrados y "compradores" los 7 807 con al menos un pedido válido (no cancelado, con monto y fecha dentro del periodo). La historia de pedidos empieza en ene-2023, así que un cliente registrado en 2021-2022 pudo haber comprado antes; por eso se muestra también la cifra de registrados desde 2023.
 
 ## 3. Propuesta de solución
 
@@ -67,6 +67,8 @@ Una plataforma que integra las 13 fuentes de datos y aplica técnicas de minerí
 | 8 | Analizar las opiniones de los clientes para detectar temas y causas de insatisfacción | F1 de sentimiento > 0,75 | Semana 16 |
 | 9 | Explicar las predicciones de los modelos con SHAP, LIME e importancia de variables | Explicación disponible por cliente en los modelos pertinentes | Semana 16 |
 | 10 | Desplegar los resultados en una API y un dashboard, con monitoreo y mantenimiento | Aplicación funcional con control de data drift, versionado de modelos y auditoría | Semana 16 |
+
+Los indicadores de negocio con fórmula, línea base y meta están en [`kpis.md`](kpis.md).
 
 ## 5. Preguntas de negocio → técnica → carpeta
 

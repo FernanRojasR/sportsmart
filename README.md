@@ -10,7 +10,7 @@ Proyecto del curso **Minería de Datos** — Facultad de Ingeniería de Sistemas
 
 ## 💡 Idea del proyecto
 
-SportSmart Perú es una tienda online de ropa y calzado deportivo que registra pedidos, pagos, envíos, campañas, navegación, atención y opiniones de sus clientes, pero solo los usa para reportes descriptivos. El EDA inicial muestra que **el 48,0 % de los 15 000 clientes registrados no tiene ninguna compra válida entre ene-2023 y sep-2026**, que **el 71,0 % de quienes sí compraron lleva más de 180 días sin hacerlo** y que **el 20 % de los compradores genera el 65,5 % de las ventas**.
+SportSmart Perú es una tienda online de ropa y calzado deportivo que registra pedidos, pagos, envíos, campañas, navegación, atención y opiniones de sus clientes, pero solo los usa para reportes descriptivos. El EDA inicial muestra que **el 48,0 % de los 15 000 clientes registrados no tiene ninguna compra válida entre ene-2023 y sep-2026**, que **el 70,9 % de quienes sí compraron lleva más de 180 días sin hacerlo** y que **el 20 % de los compradores genera el 65,5 % de las ventas**.
 
 La plataforma integra 13 fuentes de datos y aplica minería de datos para:
 
@@ -70,7 +70,7 @@ sportsmart/
 ├── tests/                   ← ✅ test_datos.py
 │
 ├── docs/
-│   ├── 00_proyecto/         ← ✅ idea del proyecto
+│   ├── 00_proyecto/         ← ✅ idea del proyecto y KPIs
 │   ├── 01_metodologia/      ← ✅ CRISP-DM y criterios de éxito
 │   ├── 02_datos/            ← ✅ diccionario de datos
 │   ├── 03_presentaciones/   ← diapositivas e informes por semana

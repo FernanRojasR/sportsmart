@@ -183,12 +183,12 @@
  "eda": {
   "periodo": [
    "2023-01-01",
-   "2026-09-29"
+   "2026-09-30"
   ],
-  "pedidos_validos": 60151,
-  "clientes_con_compra": 7802,
-  "ventas_totales_soles": 13953655.0,
-  "ticket_promedio": 231.98,
+  "pedidos_validos": 60216,
+  "clientes_con_compra": 7807,
+  "ventas_totales_soles": 13968142.0,
+  "ticket_promedio": 231.97,
   "ticket_mediana": 162.8,
   "ventas_mensuales": {
    "2023-01": 289314.0,
@@ -235,13 +235,13 @@
    "2026-06": 289309.0,
    "2026-07": 403205.0,
    "2026-08": 327115.0,
-   "2026-09": 335112.0
+   "2026-09": 349599.0
   },
   "ventas_anuales": {
    "2023": 3191545.0,
    "2024": 3623125.0,
    "2025": 4053874.0,
-   "2026": 3085112.0
+   "2026": 3099598.0
   },
   "indice_estacional_mes": {
    "1": 1.11,
@@ -272,11 +272,11 @@
    "p90": 18.0,
    "pct_una_sola_compra": 24.8
   },
-  "pct_compradores_sin_compra_180d": 71.0,
+  "pct_compradores_sin_compra_180d": 70.9,
   "clientes_unicos": 15000,
   "pct_clientes_sin_compra_valida": 48.0,
   "pct_clientes_total_sin_compra_180d": 84.9,
-  "pct_sin_compra_valida_registrados_desde_2023": 41.2,
+  "pct_sin_compra_valida_registrados_desde_2023": 41.1,
   "pct_ventas_top20_clientes": 65.5,
   "ventas_departamento_pct": {
    "Lima": 47.4,
@@ -420,5 +420,26 @@
     "Ropa inferior": 8.6
    }
   }
+ },
+ "kpis": {
+  "ventas_12m": 4353865.0,
+  "crecimiento_interanual_pct": 10.0,
+  "ticket_promedio": 229.42,
+  "pedidos_por_comprador_12m": 5.5,
+  "activacion_90d_pct": 44.5,
+  "retencion_anual_pct": 46.1,
+  "inactividad_180d_compradores_pct": 70.9,
+  "ctr_pct": 9.6,
+  "conversion_campania_pct": 3.2,
+  "carrito_abandonado_pct": 30.2,
+  "entrega_a_tiempo_pct": 89.5,
+  "quiebre_stock_pct": 11.0,
+  "quiebre_stock_nov_dic_pct": 28.5,
+  "exceso_stock_pct": 11.9,
+  "tasa_devolucion_pct": 6.8,
+  "reclamos_por_100_pedidos": 3.71,
+  "horas_resolucion_mediana": 13.4,
+  "puntuacion_media": 3.93,
+  "opiniones_negativas_pct": 8.7
  }
 }

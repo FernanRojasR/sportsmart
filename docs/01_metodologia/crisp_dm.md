@@ -2,7 +2,7 @@
 
 | Fase | Pregunta guía | Dónde queda en el repo | Estado |
 |---|---|---|---|
-| 1. Comprensión del negocio | ¿Qué problema resolvemos y cómo mediremos el éxito? | `docs/00_proyecto/idea_proyecto.md` | ✅ Presentación 1 |
+| 1. Comprensión del negocio | ¿Qué problema resolvemos y cómo mediremos el éxito? | `docs/00_proyecto/idea_proyecto.md`, `docs/00_proyecto/kpis.md` | ✅ Presentación 1 |
 | 2. Comprensión de los datos | ¿Qué datos hay y qué calidad tienen? | `notebooks/01_eda`, `src/data/eda_calidad.py`, `reports/eda.json`, `docs/02_datos` | ✅ Presentación 1 |
 | 3. Preparación de los datos | ¿Cómo limpiamos, integramos y transformamos? | `notebooks/02_preparation`, `src/features`, `data/processed` | ⏳ |
 | 4. Modelado | ¿Qué técnicas aplicamos a cada pregunta? | `notebooks/03–09`, `src/models` | ⏳ |

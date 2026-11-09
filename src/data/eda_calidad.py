@@ -50,7 +50,7 @@ cal["inventario"]["unidades_recibidas_max"]=int(iv.unidades_recibidas.max())
 out["calidad"]=cal
 
 # ---------- EDA (sobre registros válidos) ----------
-pv=p[(p.fecha_pedido<=pd.Timestamp("2026-09-30"))&(p.estado!="Cancelado")&p.monto_total.notna()].copy()
+pv=p[(p.fecha_pedido<pd.Timestamp("2026-10-01"))&(p.estado!="Cancelado")&p.monto_total.notna()].copy()
 eda={}
 eda["periodo"]=[str(pv.fecha_pedido.min().date()),str(pv.fecha_pedido.max().date())]
 eda["pedidos_validos"]=int(len(pv)); eda["clientes_con_compra"]=int(pv.cliente_id.nunique())
@@ -153,6 +153,52 @@ eda["inventario"]={"pct_producto_mes_con_quiebre":round(100*float(iv.quiebre_sto
   "pct_producto_mes_con_exceso":round(100*float((val.stock_final>2*media_prod).mean()),1),
   "pct_quiebre_categoria":{k:round(100*v,1) for k,v in qc.items()}}
 out["eda"]=eda
+
+# ---------- KPIs: línea base (últimos 12 meses cerrados: oct-2025 a sep-2026) ----------
+L0,L1,P0=pd.Timestamp("2025-10-01"),pd.Timestamp("2026-10-01"),pd.Timestamp("2024-10-01")
+en=lambda s,ini=L0,fin=L1:(s>=ini)&(s<fin)
+pct=lambda x:round(100*float(x),1)
+pl=pv[en(pv.fecha_pedido)]; pp=pv[en(pv.fecha_pedido,P0,L0)]
+kpi={}
+# ventas
+kpi["ventas_12m"]=round(float(pl.monto_total.sum()),0)
+kpi["crecimiento_interanual_pct"]=pct(pl.monto_total.sum()/pp.monto_total.sum()-1)
+kpi["ticket_promedio"]=round(float(pl.monto_total.mean()),2)
+kpi["pedidos_por_comprador_12m"]=round(len(pl)/pl.cliente_id.nunique(),2)
+# clientes
+freg=pd.to_datetime(cu.fecha_registro)
+coh=cu[en(freg,pd.Timestamp("2025-07-01"),pd.Timestamp("2026-07-01"))]  # cohorte con 90 días observables
+primera=pv.groupby("cliente_id").fecha_pedido.min()
+kpi["activacion_90d_pct"]=pct(((coh.cliente_id.map(primera)-pd.to_datetime(coh.fecha_registro)).dt.days<=90).mean())
+previos=pp.cliente_id.drop_duplicates()
+kpi["retencion_anual_pct"]=pct(previos.isin(pl.cliente_id).mean())
+kpi["inactividad_180d_compradores_pct"]=eda["pct_compradores_sin_compra_180d"]
+# marketing
+camp=t["campanias"]; cl12=camp[en(pd.to_datetime(camp.fecha_inicio))].campania_id
+ml=mk[mk.campania_id.isin(cl12)]
+compras_camp=set(zip(pl.campania_id,pl.cliente_id))
+kpi["ctr_pct"]=pct(ml.hizo_clic.mean())
+kpi["conversion_campania_pct"]=pct(pd.Series([x in compras_camp for x in zip(ml.campania_id,ml.cliente_id)]).mean())
+nv12=nv[nv.mes>="2025-10"]
+kpi["carrito_abandonado_pct"]=pct(nv12.carritos_abandonados.sum()/nv12.sesiones.sum())
+# logística
+ll=lg[lg.pedido_id.isin(pl.pedido_id)&lg.dias_entrega.between(0,40)]
+kpi["entrega_a_tiempo_pct"]=pct(ll.entrega_a_tiempo.astype(str).eq("True").mean())
+# inventario
+iv12=iv[iv.mes>="2025-10"]
+kpi["quiebre_stock_pct"]=pct(iv12.quiebre_stock.mean())
+kpi["quiebre_stock_nov_dic_pct"]=pct(iv[iv.mes.isin(["2025-11","2025-12"])].quiebre_stock.mean())
+kpi["exceso_stock_pct"]=pct((val.stock_final>2*media_prod)[val.mes>="2025-10"].mean())
+# postventa
+ei12=ent_items[ent_items.pedido_id.isin(pl.pedido_id)]
+kpi["tasa_devolucion_pct"]=pct(dv.pedido_id.isin(pl.pedido_id).sum()/len(ei12))
+a12=a[en(pd.to_datetime(a.fecha))]
+kpi["reclamos_por_100_pedidos"]=round(100*float((a12.tipo=="Reclamo").sum())/len(pl),2)
+kpi["horas_resolucion_mediana"]=float(a12[a12.horas_resolucion>=0].horas_resolucion.median())
+ov12=ov[en(pd.to_datetime(ov.fecha))]
+kpi["puntuacion_media"]=round(float(ov12.puntuacion.mean()),2)
+kpi["opiniones_negativas_pct"]=pct((ov12.puntuacion<=2).mean())
+out["kpis"]=kpi
 os.makedirs(os.path.join(B,"reports"),exist_ok=True)
 with open(os.path.join(B,"reports","eda.json"),"w",encoding="utf-8") as fh:
     json.dump(out,fh,ensure_ascii=False,indent=1)

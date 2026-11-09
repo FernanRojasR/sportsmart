@@ -6,4 +6,5 @@ Carga, generación y validación de los datos crudos.
 |---|---|---|
 | `generar_dataset.py` | Genera el dataset sintético (semilla 42) con errores intencionales | `data/raw/*.csv` |
 | `eda_calidad.py` | EDA y diagnóstico de calidad | `reports/eda.json` |
+| `estilo_graficos.py` | Colores, formato y exportación comunes de los gráficos | `reports/figures/*.png` |
 | `diccionario.py` | Diccionario y perfil de las 13 tablas | `docs/02_datos/diccionario_datos.xlsx` |

@@ -163,6 +163,43 @@ eda["inventario"]={"pct_producto_mes_con_quiebre":round(100*float(iv.quiebre_sto
   "dias_sin_stock_medio_en_quiebre":round(float(iv.dias_sin_stock[iv.quiebre_stock].mean()),1),
   "pct_producto_mes_con_exceso":round(100*float((val.stock_final>2*media_prod).mean()),1),
   "pct_quiebre_categoria":{k:round(100*v,1) for k,v in qc.items()}}
+# ---------- Distribuciones y relaciones para los gráficos del notebook ----------
+import re
+cierre=pd.Timestamp("2026-09-30")
+bt=np.arange(0,1050,50); ht,_=np.histogram(pv.monto_total,bins=bt)
+eda["distribucion_ticket"]={"bordes":bt.tolist(),"pedidos":ht.tolist(),"pedidos_mayores_1000":int((pv.monto_total>=1000).sum())}
+rec0=rec.clip(lower=0); br=np.arange(0,int(rec0.max())+90,90); hr,_=np.histogram(rec0,bins=br)
+eda["distribucion_recencia"]={"bordes":br.tolist(),"compradores":hr.tolist()}
+eda["curva_concentracion"]={str(q):round(100*float(mc.head(int(len(mc)*q/100)).sum()/mc.sum()),1) for q in range(10,101,10)}
+gaps=pv.sort_values("fecha_pedido").groupby("cliente_id").fecha_pedido.diff().dt.days.dropna()
+eda["intervalo_recompra_dias"]={"mediana":float(gaps.median()),"p90":float(gaps.quantile(.9)),"p95":float(gaps.quantile(.95)),"pct_hasta_180":round(100*float((gaps<=180).mean()),1)}
+activos=int((rec<=180).sum())
+eda["embudo_clientes"]={"registrados":int(len(cu)),"compradores":int(pv.cliente_id.nunique()),"activos_180d":activos}
+eda["inventario"]["pct_quiebre_por_mes"]={int(k):round(100*float(v),1) for k,v in iv.groupby(iv.mes.str[5:7]).quiebre_stock.mean().items()}
+# demografía frente al valor del pedido y del cliente
+cd=cu[cu.edad.between(16,90)].assign(rango=lambda x:pd.cut(x.edad,[15,24,34,44,90],labels=["16-24","25-34","35-44","45+"]))
+eda["ticket_por_edad"]={str(k):round(float(v),2) for k,v in pv.merge(cd[["cliente_id","rango"]],on="cliente_id").groupby("rango",observed=True).monto_total.mean().items()}
+gc=mc.rename("gasto").reset_index().merge(cu[["cliente_id","canal_adquisicion"]],on="cliente_id").groupby("canal_adquisicion").gasto.mean().sort_values(ascending=False)
+eda["gasto_por_comprador_canal"]={k:round(float(v),0) for k,v in gc.items()}
+# correlaciones de Spearman por comprador
+bc=pv.groupby("cliente_id").agg(frecuencia=("pedido_id","size"),gasto_total=("monto_total","sum"),ticket_medio=("monto_total","mean"),ultima=("fecha_pedido","max"))
+bc["recencia_dias"]=(cierre-bc.ultima).dt.days
+cui=cu.set_index("cliente_id")
+bc["antiguedad_dias"]=(cierre-pd.to_datetime(cui.fecha_registro)).dt.days.reindex(bc.index)
+bc["edad"]=cui.edad.where(cui.edad.between(16,90)).reindex(bc.index)
+bc["tickets"]=a.groupby("cliente_id").size().reindex(bc.index).fillna(0)
+bc["devoluciones"]=dv.merge(p[["pedido_id","cliente_id"]],on="pedido_id").groupby("cliente_id").size().reindex(bc.index).fillna(0)
+bc["puntuacion_media"]=ov.groupby("cliente_id").puntuacion.mean().reindex(bc.index)
+bc=bc.drop(columns="ultima"); corr=bc.corr("spearman").round(2)
+eda["correlacion_clientes"]={"variables":corr.columns.tolist(),"matriz":corr.values.tolist()}
+# exploración de los comentarios
+STOP=set("el la los las un una unos unas de del y o a en con que por para se mi me no muy fue lo al es pero más nadie mis su sus le ya".split())
+txt=ov.assign(c=ov.comentario.fillna("").str.strip()); txt=txt[txt.c!=""]
+def terminos(s,n=8):
+    return dict(Counter(w for com in s.str.lower() for w in re.findall(r"[a-záéíóúñ]+",com) if w not in STOP and len(w)>2).most_common(n))
+eda["texto"]={"comentarios":int(len(txt)),"comentarios_unicos":int(txt.c.nunique()),"pct_unicos":round(100*float(txt.c.nunique()/len(txt)),1),
+  "palabras_media":round(float(txt.c.str.split().str.len().mean()),1),
+  "terminos_negativos":terminos(txt.c[txt.puntuacion<=2]),"terminos_positivos":terminos(txt.c[txt.puntuacion>=4])}
 out["eda"]=eda
 
 # ---------- KPIs: línea base (últimos 12 meses cerrados: oct-2025 a sep-2026) ----------

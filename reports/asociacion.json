@@ -1,0 +1,319 @@
+{
+ "canastas": {
+  "pedidos": 60300,
+  "subcategorias": 20,
+  "items_por_pedido": 1.62,
+  "pct_multi_subcategoria": 43.2
+ },
+ "nivel_producto": {
+  "productos": 321,
+  "soporte_max_producto_pct": 1.285,
+  "soporte_max_par_pct": 0.035,
+  "pedidos_max_par": 21
+ },
+ "comparacion": [
+  {
+   "soporte_min": 0.02,
+   "algoritmo": "Apriori",
+   "conjuntos": 32,
+   "segundos": 0.0155,
+   "memoria_mb": 31.42,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.02,
+   "algoritmo": "FP-Growth",
+   "conjuntos": 32,
+   "segundos": 0.0753,
+   "memoria_mb": 0.14,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.02,
+   "algoritmo": "ECLAT",
+   "conjuntos": 32,
+   "segundos": 0.0154,
+   "memoria_mb": 0.21,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.01,
+   "algoritmo": "Apriori",
+   "conjuntos": 60,
+   "segundos": 0.0186,
+   "memoria_mb": 34.86,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.01,
+   "algoritmo": "FP-Growth",
+   "conjuntos": 60,
+   "segundos": 0.0761,
+   "memoria_mb": 0.18,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.01,
+   "algoritmo": "ECLAT",
+   "conjuntos": 60,
+   "segundos": 0.0224,
+   "memoria_mb": 0.28,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.005,
+   "algoritmo": "Apriori",
+   "conjuntos": 89,
+   "segundos": 0.0232,
+   "memoria_mb": 34.86,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.005,
+   "algoritmo": "FP-Growth",
+   "conjuntos": 89,
+   "segundos": 0.0759,
+   "memoria_mb": 0.23,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.005,
+   "algoritmo": "ECLAT",
+   "conjuntos": 89,
+   "segundos": 0.0292,
+   "memoria_mb": 0.28,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.002,
+   "algoritmo": "Apriori",
+   "conjuntos": 144,
+   "segundos": 0.0319,
+   "memoria_mb": 48.61,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.002,
+   "algoritmo": "FP-Growth",
+   "conjuntos": 144,
+   "segundos": 0.0771,
+   "memoria_mb": 0.28,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.002,
+   "algoritmo": "ECLAT",
+   "conjuntos": 144,
+   "segundos": 0.0424,
+   "memoria_mb": 0.36,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.001,
+   "algoritmo": "Apriori",
+   "conjuntos": 181,
+   "segundos": 0.036,
+   "memoria_mb": 54.4,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.001,
+   "algoritmo": "FP-Growth",
+   "conjuntos": 181,
+   "segundos": 0.0779,
+   "memoria_mb": 0.3,
+   "resultados_identicos": true
+  },
+  {
+   "soporte_min": 0.001,
+   "algoritmo": "ECLAT",
+   "conjuntos": 181,
+   "segundos": 0.0488,
+   "memoria_mb": 0.41,
+   "resultados_identicos": true
+  }
+ ],
+ "reglas": {
+  "soporte_min": 0.01,
+  "lift_min": 1.5,
+  "confianza_min": 0.2,
+  "total": 58,
+  "no_redundantes": 40,
+  "por_tamano_antecedente": {
+   "1": 31,
+   "2": 27
+  },
+  "lift_max": 12.7,
+  "lift_mediana": 2.81,
+  "confianza_max": 1.0,
+  "soporte_max_pct": 3.41
+ },
+ "validacion_temporal": {
+  "pedidos_entrenamiento": 41296,
+  "pedidos_prueba": 19004,
+  "reglas_entrenamiento": 61,
+  "se_mantienen_lift": 61,
+  "se_mantienen_soporte": 54,
+  "se_mantienen_ambos": 54,
+  "correlacion_lift": 0.996,
+  "diferencia_media_confianza": 0.017
+ },
+ "top_reglas": [
+  {
+   "antecedente": "Casaca cortaviento",
+   "consecuente": "Jogger",
+   "soporte": 0.0136,
+   "confianza": 0.3267,
+   "lift": 12.7012
+  },
+  {
+   "antecedente": "Jogger",
+   "consecuente": "Casaca cortaviento",
+   "soporte": 0.0136,
+   "confianza": 0.5287,
+   "lift": 12.7012
+  },
+  {
+   "antecedente": "Polo dry-fit + Short",
+   "consecuente": "Zapatillas running",
+   "soporte": 0.0102,
+   "confianza": 1.0,
+   "lift": 10.7295
+  },
+  {
+   "antecedente": "Banda elástica + Tomatodo",
+   "consecuente": "Zapatillas training",
+   "soporte": 0.0103,
+   "confianza": 0.8801,
+   "lift": 9.3172
+  },
+  {
+   "antecedente": "Tomatodo + Top deportivo",
+   "consecuente": "Zapatillas training",
+   "soporte": 0.0108,
+   "confianza": 0.7333,
+   "lift": 7.7633
+  },
+  {
+   "antecedente": "Medias + Polo dry-fit",
+   "consecuente": "Zapatillas running",
+   "soporte": 0.0112,
+   "confianza": 0.6784,
+   "lift": 7.2788
+  },
+  {
+   "antecedente": "Mochila",
+   "consecuente": "Casaca cortaviento",
+   "soporte": 0.0131,
+   "confianza": 0.3008,
+   "lift": 7.2274
+  },
+  {
+   "antecedente": "Casaca cortaviento",
+   "consecuente": "Mochila",
+   "soporte": 0.0131,
+   "confianza": 0.3135,
+   "lift": 7.2274
+  },
+  {
+   "antecedente": "Polo dry-fit + Tomatodo",
+   "consecuente": "Zapatillas running",
+   "soporte": 0.0107,
+   "confianza": 0.6646,
+   "lift": 7.1309
+  },
+  {
+   "antecedente": "Short + Tomatodo",
+   "consecuente": "Zapatillas running",
+   "soporte": 0.0117,
+   "confianza": 0.6467,
+   "lift": 6.9392
+  },
+  {
+   "antecedente": "Licra + Tomatodo",
+   "consecuente": "Zapatillas training",
+   "soporte": 0.0103,
+   "confianza": 0.6041,
+   "lift": 6.3951
+  },
+  {
+   "antecedente": "Medias + Tomatodo",
+   "consecuente": "Zapatillas running",
+   "soporte": 0.012,
+   "confianza": 0.5865,
+   "lift": 6.293
+  }
+ ],
+ "top_pares": [
+  {
+   "antecedente": "Casaca cortaviento",
+   "consecuente": "Jogger",
+   "soporte": 0.0136,
+   "confianza": 0.3267,
+   "lift": 12.7012
+  },
+  {
+   "antecedente": "Jogger",
+   "consecuente": "Casaca cortaviento",
+   "soporte": 0.0136,
+   "confianza": 0.5287,
+   "lift": 12.7012
+  },
+  {
+   "antecedente": "Mochila",
+   "consecuente": "Casaca cortaviento",
+   "soporte": 0.0131,
+   "confianza": 0.3008,
+   "lift": 7.2274
+  },
+  {
+   "antecedente": "Casaca cortaviento",
+   "consecuente": "Mochila",
+   "soporte": 0.0131,
+   "confianza": 0.3135,
+   "lift": 7.2274
+  },
+  {
+   "antecedente": "Mat de yoga",
+   "consecuente": "Banda elástica",
+   "soporte": 0.0112,
+   "confianza": 0.3279,
+   "lift": 6.1607
+  },
+  {
+   "antecedente": "Banda elástica",
+   "consecuente": "Mat de yoga",
+   "soporte": 0.0112,
+   "confianza": 0.2113,
+   "lift": 6.1607
+  },
+  {
+   "antecedente": "Banda elástica",
+   "consecuente": "Zapatillas training",
+   "soporte": 0.0298,
+   "confianza": 0.5597,
+   "lift": 5.9249
+  },
+  {
+   "antecedente": "Zapatillas training",
+   "consecuente": "Banda elástica",
+   "soporte": 0.0298,
+   "confianza": 0.3153,
+   "lift": 5.9249
+  },
+  {
+   "antecedente": "Chimpunes",
+   "consecuente": "Pelota",
+   "soporte": 0.0256,
+   "confianza": 0.3235,
+   "lift": 4.0773
+  },
+  {
+   "antecedente": "Pelota",
+   "consecuente": "Chimpunes",
+   "soporte": 0.0256,
+   "confianza": 0.3225,
+   "lift": 4.0773
+  }
+ ]
+}

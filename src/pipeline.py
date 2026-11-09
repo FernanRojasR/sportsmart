@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 from src.features import preparacion, seleccion, variables
-from src.models import asociacion
+from src.models import asociacion, clustering
 
 PASOS = ["generar_dataset.py", "eda_calidad.py", "diccionario.py"]
 BASE = Path(__file__).resolve().parent / "data"
@@ -26,6 +26,8 @@ def main() -> None:
     seleccion.main()
     print("\n=== asociación ===")
     asociacion.main()
+    print("\n=== clustering ===")
+    clustering.main()
 
 
 if __name__ == "__main__":

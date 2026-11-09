@@ -10,6 +10,7 @@ from src.config import FIGURES
 
 AZUL = "#2a78d6"
 NARANJA = "#eb6834"
+AGUA = "#1baf7a"  # tercera categoría; las tres primeras son distinguibles con daltonismo
 AZULES_ORDEN = ["#86b6ef", "#2a78d6", "#184f95"]  # categorías ordenadas (claro a oscuro)
 GRIS = "#c3c2b7"
 SUPERFICIE = "#fcfcfb"

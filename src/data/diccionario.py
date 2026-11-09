@@ -90,5 +90,36 @@ for row in t2.iter_rows(min_row=2):
     row[2].number_format="#,##0"
 for c in t2[t2.max_row]: c.font=Font(name="Arial",size=10,bold=True)
 for i,w in enumerate([18,46,12,10],1): t2.column_dimensions[get_column_letter(i)].width=w
+# Equivalencia campo a campo con la sección 6 de la propuesta (PDF). campo=None -> no es una columna directa.
+REPITE="La fila Productos del PDF repite los campos de Clientes; no aplica a un producto"
+EQ=[
+ ("Clientes","ID","clientes","cliente_id",""),("Clientes","edad","clientes","edad",""),("Clientes","ubicación","clientes","departamento",""),
+ ("Clientes","género","clientes","genero",""),("Clientes","fecha de registro","clientes","fecha_registro",""),
+ ("Productos","ID","productos","producto_id",""),("Productos","edad",None,None,REPITE),("Productos","ubicación",None,None,REPITE),
+ ("Productos","género",None,None,REPITE),("Productos","fecha de registro",None,None,REPITE),
+ ("Ventas","pedido","pedidos","pedido_id",""),("Ventas","cliente","pedidos","cliente_id",""),("Ventas","producto","detalle_pedido","producto_id",""),
+ ("Ventas","fecha","pedidos","fecha_pedido",""),("Ventas","cantidad","detalle_pedido","cantidad",""),("Ventas","importe","detalle_pedido","importe","A nivel de pedido: pedidos.monto_total"),
+ ("Pagos","método","pagos","metodo",""),("Pagos","importe","pagos","importe",""),("Pagos","estado","pagos","estado_pago",""),
+ ("Navegación","visitas","navegacion","sesiones","Cada sesión se considera una visita"),("Navegación","sesiones","navegacion","sesiones",""),
+ ("Navegación","páginas","navegacion","paginas_vistas",""),("Navegación","tiempo","navegacion","minutos_totales",""),
+ ("Marketing","campaña","campanias","campania_id","Nombre en campanias.nombre"),("Marketing","canal","campanias","canal",""),
+ ("Marketing","interacción","marketing","abrio","Apertura del mensaje"),("Marketing","interacción","marketing","hizo_clic","Clic en el mensaje"),
+ ("Atención","reclamos","atencion","tipo","tipo = Reclamo"),("Atención","consultas","atencion","tipo","tipo = Consulta"),("Atención","tiempos de atención","atencion","horas_resolucion",""),
+ ("Opiniones","comentario","opiniones","comentario",""),("Opiniones","puntuación","opiniones","puntuacion",""),("Opiniones","fecha","opiniones","fecha",""),
+ ("Devoluciones","producto","devoluciones","producto_id",""),("Devoluciones","motivo","devoluciones","motivo",""),("Devoluciones","fecha","devoluciones","fecha_devolucion",""),
+ ("Logística","envío","logistica","envio_id",""),("Logística","distancia","logistica","distancia_km",""),("Logística","tiempo de entrega","logistica","dias_entrega",""),
+ ("Relaciones","cliente-producto",None,None,"Se deriva de pedidos + detalle_pedido"),
+ ("Relaciones","cliente-categoría",None,None,"Se deriva de pedidos + detalle_pedido + productos"),
+ ("Relaciones","producto-producto",None,None,"Se deriva de los productos que coinciden en un pedido (detalle_pedido)"),
+]
+for _,_,tb,cp,_ in EQ:
+    if tb: assert cp in pd.read_csv(os.path.join(R,f"{tb}.csv"),nrows=0).columns,(tb,cp)
+t3=wb.create_sheet("Equivalencia PDF"); t3.append(["Tabla del PDF","Campo del PDF","Tabla del proyecto","Campo del proyecto","Observación"])
+for tp,cf,tb,cp,ob in EQ: t3.append([tp,cf,tb or "—",cp or "—",ob])
+for cell in t3[1]: cell.font=hdr; cell.fill=fill
+for row in t3.iter_rows(min_row=2):
+    for cell in row: cell.font=base; cell.border=brd; cell.alignment=Alignment(vertical="top",wrap_text=True)
+for i,w in enumerate([16,20,18,20,60],1): t3.column_dimensions[get_column_letter(i)].width=w
+t3.freeze_panes="A2"; t3.auto_filter.ref=t3.dimensions
 os.makedirs(os.path.join(B,"docs","02_datos"),exist_ok=True)
 out=os.path.join(B,"docs","02_datos","diccionario_datos.xlsx"); wb.save(out); print(out, n-1, "campos")

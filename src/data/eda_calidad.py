@@ -142,6 +142,17 @@ for (a_,b_),n in cnt.most_common(6):
     sup=n/N; lift=sup/((sub_cnt[a_]/N)*(sub_cnt[b_]/N))
     pares.append({"par":f"{a_} + {b_}","soporte_pct":round(100*sup,2),"lift":round(lift,2)})
 eda["top_pares"]=pares
+# relaciones derivables para grafos (sobre ítems y pedidos válidos)
+rel=dd.merge(p[["pedido_id","cliente_id"]],on="pedido_id")
+pares_prod=dd[["pedido_id","producto_id"]].drop_duplicates()
+pares_prod=pares_prod.merge(pares_prod,on="pedido_id",suffixes=("_a","_b")); pares_prod=pares_prod[pares_prod.producto_id_a<pares_prod.producto_id_b]
+cooc=pares_prod.groupby(["producto_id_a","producto_id_b"]).size()
+eda["relaciones"]={"cliente_producto":int(len(rel.drop_duplicates(["cliente_id","producto_id"]))),
+  "cliente_categoria":int(len(rel.drop_duplicates(["cliente_id","categoria"]))),
+  "producto_producto":int(len(cooc)),"producto_producto_5_o_mas_pedidos":int((cooc>=5).sum())}
+# cobertura de la navegación: no abarca todo el periodo ni todos los clientes
+eda["cobertura_navegacion"]={"mes_inicio":str(nv.mes.min()),"mes_fin":str(nv.mes.max()),"clientes":int(nv.cliente_id.nunique()),
+  "pct_clientes":round(100*float(nv.cliente_id.nunique()/c.cliente_id.nunique()),1)}
 # inventario (quiebre = reposición urgente; exceso = stock final mayor a 2 meses de venta media del producto)
 pico=iv.mes.str[5:7].isin(["11","12"])
 val=iv[(balance==iv.stock_final)&(iv.stock_final>=0)]

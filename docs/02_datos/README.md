@@ -1,6 +1,6 @@
 # Datos
 
-- `diccionario_datos.xlsx`: diccionario y perfil de las 13 tablas (92 campos). Se regenera con `python src/data/diccionario.py`.
+- `diccionario_datos.xlsx`: diccionario y perfil de las 13 tablas (92 campos), con la hoja `Equivalencia PDF` campo a campo. Se regenera con `python src/data/diccionario.py`.
 - Datos crudos: `data/raw/*.csv` (dataset sintético, semilla 42).
 
 ## Tablas
@@ -8,7 +8,7 @@
 | Tabla | Grano (1 fila = …) | Clave | Se relaciona con |
 |---|---|---|---|
 | clientes | un cliente | cliente_id | pedidos, navegacion, marketing, atencion, opiniones |
-| productos | un producto | producto_id | detalle_pedido, devoluciones |
+| productos | un producto | producto_id | detalle_pedido, devoluciones, inventario |
 | pedidos | un pedido | pedido_id | clientes, campanias, detalle_pedido, pagos, logistica |
 | detalle_pedido | un ítem de un pedido | pedido_id + producto_id | pedidos, productos |
 | pagos | un pago | pago_id | pedidos |
@@ -20,6 +20,33 @@
 | devoluciones | una devolución | devolucion_id | pedidos, productos |
 | logistica | un envío | envio_id | pedidos |
 | inventario | cierre mensual de un producto | producto_id + mes | productos |
+
+## Equivalencia con el dataset de la propuesta (PDF, sección 6)
+
+| Tabla del PDF | Tabla(s) del proyecto | Tipo de equivalencia | Observación |
+|---|---|---|---|
+| Clientes | `clientes` | Directa | La ubicación se registra como `departamento` |
+| Productos | `productos` | Adaptada | La fila del PDF repite los campos de Clientes (edad, ubicación, género, fecha de registro), que no aplican a un producto. Se usan atributos de producto: nombre, categoría, subcategoría, marca, precio y costo |
+| Ventas | `pedidos` + `detalle_pedido` | Dividida | Separa la cabecera del pedido de sus ítems, porque un pedido puede tener varios productos |
+| Pagos | `pagos` | Directa | |
+| Navegación | `navegacion` | Directa | Cada sesión se considera una visita. Es un agregado mensual |
+| Marketing | `campanias` + `marketing` | Dividida | Separa la campaña y su canal de la interacción de cada cliente |
+| Atención | `atencion` | Directa | Reclamos y consultas se distinguen con `tipo`; el tiempo está en `horas_resolucion` |
+| Opiniones | `opiniones` | Directa | |
+| Devoluciones | `devoluciones` | Directa | |
+| Logística | `logistica` | Directa | |
+| Relaciones | Sin tabla propia | Derivada | Se construye en la preparación para grafos (ver abajo) |
+| — | `inventario` | Adicional | No la pide el PDF; se agregó para sustentar el problema de quiebres y excesos de stock |
+
+**Relaciones derivables** (sobre ítems y pedidos válidos, `reports/eda.json` → `eda.relaciones`):
+
+| Relación | Cómo se obtiene | Pares distintos |
+|---|---|---|
+| Cliente-producto | `pedidos` + `detalle_pedido` | 84 477 |
+| Cliente-categoría | `pedidos` + `detalle_pedido` + `productos` | 25 147 |
+| Producto-producto | Productos que coinciden en un mismo pedido | 15 643 (3 891 coinciden en 5 pedidos o más) |
+
+**Cobertura parcial de `navegacion`:** solo abarca de ene-2025 a sep-2026 y 3 451 clientes (23,0 %). Las variables de navegación no estarán disponibles para todos los clientes al modelar.
 
 ## Cómo se simula el inventario
 

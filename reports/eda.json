@@ -406,6 +406,18 @@
     "lift": 2.84
    }
   ],
+  "relaciones": {
+   "cliente_producto": 84477,
+   "cliente_categoria": 25147,
+   "producto_producto": 15643,
+   "producto_producto_5_o_mas_pedidos": 3891
+  },
+  "cobertura_navegacion": {
+   "mes_inicio": "2025-01",
+   "mes_fin": "2026-09",
+   "clientes": 3451,
+   "pct_clientes": 23.0
+  },
   "inventario": {
    "pct_producto_mes_con_quiebre": 10.6,
    "pct_quiebre_nov_dic": 29.4,

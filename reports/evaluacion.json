@@ -1,0 +1,201 @@
+{
+ "resultados": [
+  {
+   "tecnica": "Asociación",
+   "modelo": "FP-Growth, por subcategoría",
+   "metrica": "Reglas con lift > 1,5 y soporte ≥ 1 %",
+   "resultado": 58,
+   "meta": "Al menos 1 regla",
+   "cumple": true,
+   "referencia": 0.0,
+   "referencia_nombre": "Canastas al azar",
+   "mejor_si": "mayor",
+   "validacion": "61 de 61 reglas mantienen el lift en el año siguiente",
+   "supera_referencia": true
+  },
+  {
+   "tecnica": "Clustering",
+   "modelo": "K-Means sobre RFM, 3 segmentos",
+   "metrica": "Silhouette",
+   "resultado": 0.412,
+   "meta": "> 0,4",
+   "cumple": true,
+   "referencia": 0.214,
+   "referencia_nombre": "Tercios de puntaje RFM",
+   "mejor_si": "mayor",
+   "validacion": "ARI de 0,986 con submuestras de 80 %",
+   "supera_referencia": true
+  },
+  {
+   "tecnica": "Series temporales",
+   "modelo": "Prophet con calendario y campañas",
+   "metrica": "MAPE semanal (%)",
+   "resultado": 5.78,
+   "meta": "< 15 %",
+   "cumple": true,
+   "referencia": 9.14,
+   "referencia_nombre": "Mismo día hace 52 semanas",
+   "mejor_si": "menor",
+   "validacion": "Últimos 6 meses, 4 orígenes y temporada alta 2025",
+   "supera_referencia": true
+  },
+  {
+   "tecnica": "Grafos",
+   "modelo": "Louvain sobre producto-producto",
+   "metrica": "Modularidad",
+   "resultado": 0.356,
+   "meta": "> 0,3",
+   "cumple": true,
+   "referencia": 0.169,
+   "referencia_nombre": "Compras al azar",
+   "mejor_si": "mayor",
+   "validacion": "ARI de 0,963 entre semillas",
+   "supera_referencia": true
+  },
+  {
+   "tecnica": "Regresión",
+   "modelo": "XGBoost, por producto y mes",
+   "metrica": "R²",
+   "resultado": 0.735,
+   "meta": "> 0,6",
+   "cumple": true,
+   "referencia": 0.643,
+   "referencia_nombre": "Promedio móvil 3 meses",
+   "mejor_si": "mayor",
+   "validacion": "Abril a setiembre de 2026, con hiperparámetros validados en el pasado",
+   "supera_referencia": true
+  }
+ ],
+ "referencias": {
+  "asociacion": {
+   "reglas_azar_media": 0.0,
+   "reglas_azar_max": 0,
+   "repeticiones": 5
+  },
+  "clustering": {
+   "silhouette": 0.214
+  }
+ },
+ "bootstrap": {
+  "series": {
+   "semanas": 25,
+   "mape_modelo_ic95": [
+    4.21,
+    7.394
+   ],
+   "mape_referencia_ic95": [
+    6.658,
+    11.864
+   ],
+   "mejora_puntos_ic95": [
+    0.071,
+    6.712
+   ]
+  },
+  "regresion": {
+   "productos": 321,
+   "r2_modelo_ic95": [
+    0.704,
+    0.763
+   ],
+   "r2_referencia_ic95": [
+    0.579,
+    0.701
+   ],
+   "mejora_r2_ic95": [
+    0.049,
+    0.135
+   ]
+  }
+ },
+ "no_alcanzadas": [
+  {
+   "analisis": "MAPE diario de ventas",
+   "resultado": "16,61 %",
+   "referencia_meta": "< 15 %",
+   "causa": "Las ventas de cada día son muy variables",
+   "decision": "Usar el pronóstico para planificar por semana o periodo"
+  },
+  {
+   "analisis": "Gasto futuro del cliente",
+   "resultado": "R² medio de 0,490",
+   "referencia_meta": "R² > 0,6",
+   "causa": "73,4 % de los compradores no gasta en los 12 meses siguientes",
+   "decision": "Análisis secundario; evaluar un modelo de dos etapas con el de abandono"
+  },
+  {
+   "analisis": "Agrupación de productos",
+   "resultado": "Silhouette de 0,241",
+   "referencia_meta": "Sin meta propia; 0,4 en clientes",
+   "causa": "Los productos no forman grupos bien separados",
+   "decision": "Usar ABC/XYZ para decisiones de producto"
+  }
+ ],
+ "respuestas": [
+  {
+   "n": "1",
+   "pregunta": "¿Qué segmentos de clientes existen?",
+   "respuesta": "Tres: Alto valor activos, Valiosos inactivos y Ocasionales inactivos."
+  },
+  {
+   "n": "2",
+   "pregunta": "¿Qué clientes presentan mayor valor?",
+   "respuesta": "Alto valor activos: 14,9 % de los compradores y mediana de CLV de S/ 540. Valiosos inactivos aportó 57,0 % de las ventas históricas."
+  },
+  {
+   "n": "3",
+   "pregunta": "¿Qué clientes presentan características similares?",
+   "respuesta": "Los de cada segmento y comunidad; 88,0 % comparte deporte con su cliente más parecido."
+  },
+  {
+   "n": "4",
+   "pregunta": "¿Cómo evolucionan las ventas?",
+   "respuesta": "Crecen y son estacionales; los días de quincena venden 26 % más."
+  },
+  {
+   "n": "5",
+   "pregunta": "¿Cuál es la tendencia futura de las ventas?",
+   "respuesta": "Se esperan S/ 1 358 062 en 90 días, 10,7 % sobre el mismo periodo anterior."
+  },
+  {
+   "n": "6",
+   "pregunta": "¿Qué factores explican las ventas?",
+   "respuesta": "Domina el historial de ventas; luego precio y costo, y campañas. Las visitas no agregan capacidad predictiva."
+  },
+  {
+   "n": "7",
+   "pregunta": "¿Qué productos se compran conjuntamente?",
+   "respuesta": "Por subcategoría, por ejemplo Casaca cortaviento y Jogger."
+  },
+  {
+   "n": "8",
+   "pregunta": "¿Qué productos tienen mayor asociación?",
+   "respuesta": "58 reglas superan la meta; el lift máximo es 12,70."
+  },
+  {
+   "n": "9",
+   "pregunta": "¿Qué productos presentan comportamientos similares?",
+   "respuesta": "Dos grupos débiles de alta y baja rotación; ABC/XYZ resulta más útil."
+  },
+  {
+   "n": "10",
+   "pregunta": "¿Cuál será el volumen de ventas esperado?",
+   "respuesta": "Por producto y mes, con R² de 0,735; el error total mensual es de 5,8 %."
+  },
+  {
+   "n": "11",
+   "pregunta": "¿Cuánto gastará un cliente?",
+   "respuesta": "Solo aproximado: R² medio de 0,490, bajo la meta."
+  },
+  {
+   "n": "14",
+   "pregunta": "¿Qué productos, clientes o categorías están fuertemente conectados?",
+   "respuesta": "Destacan los Tomatodos como conectores. Entre categorías, solo Calzado y Accesorios."
+  },
+  {
+   "n": "15",
+   "pregunta": "¿Qué comunidades o patrones pueden encontrarse?",
+   "respuesta": "Tres comunidades: Running y fútbol (48,6 % de ingresos), Training y yoga (32,5 %) y Outdoor (13,1 %)."
+  }
+ ]
+}

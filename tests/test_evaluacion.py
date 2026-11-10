@@ -41,3 +41,10 @@ def test_se_reportan_los_resultados_bajo_lo_esperado():
 
 def test_respuestas_excluyen_preguntas_de_semana_16():
     assert not {x["n"] for x in respuestas(_r())} & {"12", "13", "16", "17", "18"}
+
+
+def test_graficos_se_generan(tmp_path):
+    from src.evaluation import graficos
+    rutas = graficos.main(tmp_path)
+    assert [r.name for r in rutas] == ["regresion_validacion_prueba.png", "regresion_factores_detalle.png", "evaluacion_comparativa.png"]
+    assert all(r.stat().st_size > 10_000 for r in rutas)

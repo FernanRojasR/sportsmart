@@ -7,7 +7,7 @@ import runpy
 import sys
 from pathlib import Path
 
-from src.evaluation import comparacion
+from src.evaluation import comparacion, graficos
 from src.features import preparacion, seleccion, variables
 from src.models import asociacion, clustering, grafos, regresion, series
 
@@ -37,6 +37,7 @@ def main() -> None:
     regresion.main()
     print("\n=== evaluación comparativa ===")
     comparacion.main()
+    graficos.main()
 
 
 if __name__ == "__main__":

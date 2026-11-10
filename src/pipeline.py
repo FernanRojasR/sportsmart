@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 from src.features import preparacion, seleccion, variables
-from src.models import asociacion, clustering, grafos, series
+from src.models import asociacion, clustering, grafos, regresion, series
 
 PASOS = ["generar_dataset.py", "eda_calidad.py", "diccionario.py"]
 BASE = Path(__file__).resolve().parent / "data"
@@ -32,6 +32,8 @@ def main() -> None:
     series.main()
     print("\n=== grafos ===")
     grafos.main()
+    print("\n=== regresión ===")
+    regresion.main()
 
 
 if __name__ == "__main__":

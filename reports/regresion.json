@@ -1,0 +1,260 @@
+{
+ "ventas": {
+  "filas_entrenamiento": 8667,
+  "filas_prueba": 1926,
+  "meses_prueba": [
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07",
+   "2026-08",
+   "2026-09"
+  ],
+  "modelos": {
+   "Referencia (promedio móvil 3 meses)": {
+    "r2": 0.643,
+    "rmse": 594.4,
+    "mae": 382.7,
+    "wape_pct": 36.7,
+    "parametros": {}
+   },
+   "Regresión lineal simple": {
+    "r2": 0.651,
+    "rmse": 588.0,
+    "mae": 381.8,
+    "wape_pct": 36.6,
+    "parametros": {}
+   },
+   "Regresión múltiple": {
+    "r2": 0.751,
+    "rmse": 497.0,
+    "mae": 333.8,
+    "wape_pct": 32.0,
+    "r2_validacion": 0.715,
+    "parametros": {}
+   },
+   "Ridge": {
+    "r2": 0.751,
+    "rmse": 497.0,
+    "mae": 333.8,
+    "wape_pct": 32.0,
+    "r2_validacion": 0.715,
+    "parametros": {
+     "alpha": 1
+    }
+   },
+   "Lasso": {
+    "r2": 0.751,
+    "rmse": 496.4,
+    "mae": 332.8,
+    "wape_pct": 31.9,
+    "r2_validacion": 0.715,
+    "parametros": {
+     "alpha": 1
+    }
+   },
+   "Elastic Net": {
+    "r2": 0.75,
+    "rmse": 497.4,
+    "mae": 333.7,
+    "wape_pct": 32.0,
+    "r2_validacion": 0.711,
+    "parametros": {
+     "alpha": 0.1,
+     "l1_ratio": 0.8
+    }
+   },
+   "Random Forest": {
+    "r2": 0.743,
+    "rmse": 504.9,
+    "mae": 329.3,
+    "wape_pct": 31.6,
+    "r2_validacion": 0.716,
+    "parametros": {
+     "max_depth": 8,
+     "min_samples_leaf": 10
+    }
+   },
+   "Gradient Boosting": {
+    "r2": 0.74,
+    "rmse": 507.6,
+    "mae": 329.2,
+    "wape_pct": 31.6,
+    "r2_validacion": 0.716,
+    "parametros": {
+     "learning_rate": 0.03,
+     "max_depth": 2
+    }
+   },
+   "XGBoost": {
+    "r2": 0.735,
+    "rmse": 511.8,
+    "mae": 329.7,
+    "wape_pct": 31.6,
+    "r2_validacion": 0.723,
+    "parametros": {
+     "learning_rate": 0.03,
+     "max_depth": 3
+    }
+   }
+  },
+  "mejor_modelo": "XGBoost",
+  "meta_r2": 0.6,
+  "cumple_meta": true,
+  "total_mensual": {
+   "mes": [
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09"
+   ],
+   "real": [
+    299037.0,
+    336508.0,
+    290424.0,
+    403672.0,
+    327621.0,
+    350494.0
+   ],
+   "prediccion": [
+    322875.0,
+    324338.0,
+    326006.0,
+    386812.0,
+    333142.0,
+    327403.0
+   ],
+   "wape_pct": 5.8
+  },
+  "por_categoria": {
+   "Accesorios": {
+    "r2": 0.688,
+    "rmse": 291.0,
+    "mae": 210.8,
+    "wape_pct": 27.7
+   },
+   "Calzado": {
+    "r2": 0.694,
+    "rmse": 863.4,
+    "mae": 571.0,
+    "wape_pct": 30.8
+   },
+   "Equipamiento": {
+    "r2": 0.454,
+    "rmse": 337.9,
+    "mae": 242.7,
+    "wape_pct": 40.6
+   },
+   "Ropa inferior": {
+    "r2": 0.669,
+    "rmse": 400.1,
+    "mae": 319.9,
+    "wape_pct": 28.0
+   },
+   "Ropa superior": {
+    "r2": 0.458,
+    "rmse": 386.5,
+    "mae": 295.6,
+    "wape_pct": 34.7
+   }
+  },
+  "importancia_variables": {
+   "ventas_media_historica": 1.0752,
+   "precio_lista": 0.0468,
+   "descuento_max": 0.0176,
+   "ventas_media_3m": 0.0064,
+   "ventas_lag12": 0.0056,
+   "costo": 0.0052,
+   "categoria": 0.0049,
+   "stock_inicial": 0.0037,
+   "ventas_lag3": 0.0013,
+   "quiebre_lag1": 0.0007,
+   "mes_del_anio": 0.0005,
+   "marca": 0.0004,
+   "dias_campania": 0.0003,
+   "compradores_lag1": 0.0003,
+   "periodo": 0.0,
+   "ventas_lag1": -0.0025,
+   "ventas_lag2": -0.005
+  },
+  "importancia_bloques": {
+   "Historial de ventas": 1.112,
+   "Precio y costo": 0.059,
+   "Campañas": 0.021,
+   "Inventario": 0.005,
+   "Producto": 0.005,
+   "Calendario": 0.001,
+   "Compradores": 0.0
+  },
+  "coeficientes_ridge": {
+   "ventas_media_historica": 727.7,
+   "descuento_max": 128.5,
+   "ventas_lag12": 77.5,
+   "precio_lista": 61.4,
+   "mes_del_anio": 42.9,
+   "ventas_lag1": 30.6,
+   "periodo": 26.1,
+   "costo": -25.3,
+   "compradores_lag1": 22.3,
+   "ventas_lag2": -21.7,
+   "ventas_lag3": -17.9,
+   "stock_inicial": 11.5,
+   "dias_campania": 10.9,
+   "ventas_media_3m": -3.3,
+   "quiebre_lag1": -0.3
+  }
+ },
+ "visitas": {
+  "filas_entrenamiento": 4494,
+  "meses_entrenamiento": 14,
+  "sin_sesiones": {
+   "r2": 0.75,
+   "rmse": 497.3,
+   "mae": 335.8,
+   "wape_pct": 32.2
+  },
+  "con_sesiones": {
+   "r2": 0.75,
+   "rmse": 498.0,
+   "mae": 336.7,
+   "wape_pct": 32.3
+  }
+ },
+ "valor_cliente": {
+  "compradores": 5938,
+  "pct_gasto_futuro_cero": 73.4,
+  "gasto_p50": 0.0,
+  "gasto_p99": 6720.54,
+  "modelos": {
+   "Referencia (gasto de los 12 meses previos)": {
+    "r2_medio": 0.127,
+    "r2_desv": 0.11,
+    "mae_medio": 575.8
+   },
+   "Ridge": {
+    "r2_medio": 0.449,
+    "r2_desv": 0.083,
+    "r2_min": 0.297,
+    "r2_max": 0.543,
+    "mae_medio": 460.1
+   },
+   "Random Forest": {
+    "r2_medio": 0.49,
+    "r2_desv": 0.085,
+    "r2_min": 0.327,
+    "r2_max": 0.56,
+    "mae_medio": 387.2
+   },
+   "XGBoost": {
+    "r2_medio": 0.476,
+    "r2_desv": 0.09,
+    "r2_min": 0.298,
+    "r2_max": 0.539,
+    "mae_medio": 394.9
+   }
+  },
+  "meta_r2": 0.6
+ }
+}

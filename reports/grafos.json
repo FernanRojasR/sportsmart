@@ -58,9 +58,9 @@
     "subcategorias_principales": [
      "Zapatillas training",
      "Top deportivo",
-     "Banda elástica",
      "Licra",
-     "Mat de yoga"
+     "Mat de yoga",
+     "Banda elástica"
     ],
     "categorias": {
      "Equipamiento": 35,
@@ -70,24 +70,24 @@
      "Accesorios": 11
     },
     "ingresos_pct": 32.5,
-    "etiqueta": "Zapatillas training · Top deportivo · Banda elástica"
+    "etiqueta": "Zapatillas training · Top deportivo · Licra"
    },
    {
     "comunidad": 2,
     "productos": 58,
     "subcategorias_principales": [
-     "Mochila",
      "Gorra",
-     "Jogger",
-     "Casaca cortaviento"
+     "Mochila",
+     "Casaca cortaviento",
+     "Jogger"
     ],
     "categorias": {
      "Accesorios": 30,
-     "Ropa inferior": 14,
-     "Ropa superior": 14
+     "Ropa superior": 14,
+     "Ropa inferior": 14
     },
     "ingresos_pct": 13.1,
-    "etiqueta": "Mochila · Gorra · Jogger"
+    "etiqueta": "Gorra · Mochila · Casaca cortaviento"
    }
   ]
  },

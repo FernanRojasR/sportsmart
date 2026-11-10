@@ -106,8 +106,8 @@ docker compose up notebooks         # Jupyter en http://localhost:8888
 | Semana | Entrega | Fases CRISP-DM | Estado |
 |---|---|---|---|
 | 7 | Presentación 1 | Comprensión del negocio y de los datos | ✅ |
-| 10 | Presentación 2 | Preparación y primeros modelos | ⏳ |
-| 13 | Presentación 3 | Modelado y evaluación | ⏳ |
+| 10 | Presentación 2 | Preparación y primeros modelos | ✅ (presentación conjunta con la semana 13) |
+| 13 | Presentación 3 | Modelado y evaluación | ✅ (presentación conjunta con la semana 10) |
 | 16 | Presentación 4 | Despliegue | ⏳ |
 
 ## 👥 Equipo

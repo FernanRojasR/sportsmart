@@ -25,9 +25,9 @@ El proyecto sigue **CRISP-DM** (*Cross-Industry Standard Process for Data Mining
 |---|---|---|---|
 | 1. Comprensión del negocio | ¿Qué problema resolvemos y cómo mediremos el éxito? | Semana 7 | ✅ Documentada |
 | 2. Comprensión de los datos | ¿Qué datos hay y qué calidad tienen? | Semana 7 | ✅ Documentada |
-| 3. Preparación de los datos | ¿Cómo limpiamos, integramos y transformamos? | Semana 10 | ⏳ Planificada |
-| 4. Modelado | ¿Qué técnica aplicamos a cada pregunta? | Semanas 10, 13 y 16 | ⏳ Planificada |
-| 5. Evaluación | ¿Los modelos cumplen los criterios y sirven al negocio? | Semanas 13 y 16 | ⏳ Planificada |
+| 3. Preparación de los datos | ¿Cómo limpiamos, integramos y transformamos? | Semanas 10 y 13 (presentación conjunta) | ✅ Documentada |
+| 4. Modelado | ¿Qué técnica aplicamos a cada pregunta? | Semanas 10, 13 y 16 | 🟡 Parcial: faltan clasificación y minería de textos |
+| 5. Evaluación | ¿Los modelos cumplen los criterios y sirven al negocio? | Semanas 13 y 16 | 🟡 Parcial: [evaluación comparativa](evaluacion_comparativa.md) hecha; falta explicabilidad |
 | 6. Despliegue | ¿Cómo lo usa el negocio y cómo se mantiene? | Semana 16 | ⏳ Planificada |
 
 ## 3. Actividades por fase
@@ -51,7 +51,7 @@ El proyecto sigue **CRISP-DM** (*Cross-Industry Standard Process for Data Mining
 | Explorar los datos | EDA con 15 gráficos y 12 hallazgos | `notebooks/01_eda/01_eda_calidad.ipynb`, `reports/figures/` |
 | Verificar la calidad | 23 problemas con impacto y tratamiento propuesto; 16 relaciones validadas | [`informe_calidad.md`](../02_datos/informe_calidad.md), `tests/test_datos.py` |
 
-### Fase 3. Preparación de los datos ⏳
+### Fase 3. Preparación de los datos ✅
 
 | Actividad de CRISP-DM | Aplicación prevista | Producto |
 |---|---|---|
@@ -62,7 +62,7 @@ El proyecto sigue **CRISP-DM** (*Cross-Industry Standard Process for Data Mining
 | Dar formato a los datos | One-Hot o Label Encoding, MinMaxScaler o StandardScaler, transacciones para asociación | `src/features` |
 | Reducir y balancear | Eliminar colinealidad, seleccionar por importancia, PCA, LDA o QDA según corresponda; SMOTE, ADASYN, under u oversampling solo con datos de entrenamiento | `notebooks/02_preparation` |
 
-### Fase 4. Modelado ⏳
+### Fase 4. Modelado 🟡
 
 Se ejecutan las cuatro actividades de CRISP-DM para cada técnica: seleccionar la técnica, diseñar la prueba, construir el modelo y evaluarlo técnicamente.
 
@@ -76,7 +76,7 @@ Se ejecutan las cuatro actividades de CRISP-DM para cada técnica: seleccionar l
 | Clasificación | Random Forest, XGBoost, SVM y Naive Bayes | Abandono = 180 días sin compra; variables calculadas antes del corte y etiqueta observada después | Semana 16 |
 | Minería de textos | Pipeline de la propuesta, TF-IDF y sentimiento | Partición entrenamiento-prueba sin repetir textos idénticos entre ambas | Semana 16 |
 
-### Fase 5. Evaluación ⏳
+### Fase 5. Evaluación 🟡
 
 | Actividad de CRISP-DM | Aplicación prevista | Producto |
 |---|---|---|
@@ -120,6 +120,7 @@ CRISP-DM admite volver a fases anteriores. Durante la semana 7 ya ocurrió:
 | Exploración de los datos | El 71 % de inactividad se calculaba solo sobre compradores; 48,0 % de los clientes no tenía compra válida | Comprensión del negocio | Se corrigió la evidencia y se agregó un KPI de activación |
 | Verificación de los datos | Los pedidos del 30 de setiembre quedaban fuera del análisis | Exploración de los datos | Se corrigió el filtro y se recalcularon las cifras |
 | Exploración de los datos | 97,6 % de las recompras ocurre en 180 días o menos | Objetivos de minería | Se sustentó la definición de abandono |
+| Pruebas de viabilidad del modelado | Las metas de asociación, series y regresión no eran alcanzables al nivel planteado | Objetivos de minería | Se ajustó el nivel de medición sin cambiar los valores de las metas |
 
 ## 6. Riesgos y restricciones
 

@@ -133,8 +133,9 @@ def analizar(items: pd.DataFrame, opiniones: pd.DataFrame, clientes: pd.DataFram
     ing = v.groupby("producto_id").importe.sum()
     perfil = []
     for i, s in enumerate(com):
-        sub = info.loc[list(s)].subcategoria.value_counts()
-        perfil.append({"comunidad": i, "productos": len(s), "subcategorias_principales": list(sub.index[:5]), "categorias": info.loc[list(s)].categoria.value_counts().to_dict(), "ingresos_pct": round(100 * float(ing.reindex(list(s)).sum() / ing.sum()), 1), "etiqueta": " · ".join(sub.index[:3])})
+        miembros = sorted(s)  # un conjunto no tiene orden fijo y los empates cambiarían entre ejecuciones
+        sub = info.loc[miembros].subcategoria.value_counts()
+        perfil.append({"comunidad": i, "productos": len(s), "subcategorias_principales": list(sub.index[:5]), "categorias": info.loc[miembros].categoria.value_counts().to_dict(), "ingresos_pct": round(100 * float(ing.reindex(miembros).sum() / ing.sum()), 1), "etiqueta": " · ".join(sub.index[:3])})
     sub_com = nodos.groupby("subcategoria").comunidad.agg(lambda x: int(x.value_counts().idxmax())).to_dict()
     lift_sub = relaciones_categoria(v, "subcategoria"); lift_cat = relaciones_categoria(v, "categoria")
     tmp = rec.groupby("producto_id").agg(resenas=("recomienda", "size"), recomendaciones=("recomienda", "sum")).assign(pct=lambda d: 100 * d.recomendaciones / d.resenas).join(info)

@@ -118,3 +118,5 @@ El EDA (`notebooks/01_eda`) y la preparación (`notebooks/02_preparation`) no re
 | 10 | Presentación 2 | Preparación, ingeniería de características, asociación y primer prototipo | `notebooks/02_preparation`, `notebooks/03_association`, `src/features` |
 | 13 | Presentación 3 | Clustering, series de tiempo, grafos, regresión y evaluación comparativa | `notebooks/04_clustering`, `notebooks/05_timeseries`, `notebooks/06_graphs`, `notebooks/07_regression`, `src/models`, `src/evaluation` |
 | 16 | Presentación 4 | Aplicación web, dashboard, clasificación, NLP, explicabilidad y monitoreo | `notebooks/08_classification`, `notebooks/09_nlp`, `src/explainability`, `src/monitoring`, `backend`, `frontend`, `deployment` |
+
+Las presentaciones 2 y 3 se realizan en conjunto; la presentación 4 se mantiene en la semana 16.

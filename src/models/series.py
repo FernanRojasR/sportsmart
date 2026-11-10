@@ -135,7 +135,7 @@ def pronostico_futuro(s: pd.DataFrame, ex: pd.DataFrame) -> tuple[pd.DataFrame, 
     m = _prophet(s.ventas, ex, muestras=1000)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        fut = _futuro(ex_f); p = m.predict(fut); np.random.seed(SEED); muestras = m.predictive_samples(fut)["yhat"]
+        fut = _futuro(ex_f); np.random.seed(SEED); muestras = m.predictive_samples(fut)["yhat"]; p = m.predict(fut)  # Prophet simula con numpy: la semilla los hace reproducibles
     tabla = pd.DataFrame({"fecha": fechas, "pronostico": p.yhat.round(2).values, "limite_inferior": p.yhat_lower.round(2).values, "limite_superior": p.yhat_upper.round(2).values, "descuento_campania_supuesto": desc.values})
     resumen = {str(h): {"pronostico": round(float(p.yhat.values[:h].sum()), 0), "limite_inferior_80": round(float(np.quantile(muestras[:h].sum(axis=0), .1)), 0), "limite_superior_80": round(float(np.quantile(muestras[:h].sum(axis=0), .9)), 0),
                         "mismo_periodo_anio_anterior": round(float(s.ventas.reindex(fechas[:h] - pd.Timedelta(days=364)).sum()), 0)} for h in HORIZONTES}
@@ -156,6 +156,7 @@ def analizar(s: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
     mejor = min(MODELOS, key=lambda m: hold[m]["mape_semanal"])
     tabla, futuro = pronostico_futuro(s, ex)
     return {
+        "ventas_mensuales": {str(k.date())[:7]: round(float(v), 0) for k, v in s.ventas.resample("MS").sum().items()},
         "serie": {"dias": len(s), "inicio": str(s.index[0].date()), "fin": str(s.index[-1].date()), "ventas_total": round(float(s.ventas.sum()), 2), "dias_prueba": DIAS_PRUEBA, "inicio_prueba": str(corte.date())},
         "descomposicion": descomposicion(s), "ordenes": {"SARIMA": list(ord_sarima), "SARIMAX": list(ord_sarimax), "estacional": list(ORDEN_ESTACIONAL), "top_aic_sarima": tabla_sarima, "top_aic_sarimax": tabla_sarimax},
         "prueba_6_meses": hold, "mejor_modelo": mejor, "meta_mape_semanal": META_MAPE, "cumple_meta": bool(hold[mejor]["mape_semanal"] < META_MAPE),

@@ -91,6 +91,7 @@ python -m src.pipeline              # genera datos + EDA + diccionario
 python -m src.pipeline --sin-datos  # solo EDA + diccionario con los CSV actuales
 pytest -q                           # pruebas de integridad de datos
 jupyter lab                         # abrir notebooks/
+streamlit run frontend/app.py       # primer prototipo del dashboard
 ```
 
 Con Docker:
